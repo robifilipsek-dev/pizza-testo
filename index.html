@@ -55,14 +55,14 @@
                             <div>
                                 <label class="block text-xs font-medium text-slate-400 mb-1">Število hlebčkov</label>
                                 <div class="relative">
-                                    <input type="number" id="numBalls" value="4" min="1" max="100" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-slate-100 font-semibold focus:outline-none focus:border-orange-500 transition">
+                                    <input type="number" id="numBalls" value="6" min="1" max="100" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-slate-100 font-semibold focus:outline-none focus:border-orange-500 transition">
                                     <span class="absolute right-3 top-2.5 text-xs text-slate-500">kos</span>
                                 </div>
                             </div>
                             <div>
                                 <label class="block text-xs font-medium text-slate-400 mb-1">Teža hlebčka</label>
                                 <div class="relative">
-                                    <input type="number" id="ballWeight" value="260" min="50" max="1000" step="5" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-slate-100 font-semibold focus:outline-none focus:border-orange-500 transition">
+                                    <input type="number" id="ballWeight" value="250" min="50" max="1000" step="5" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-slate-100 font-semibold focus:outline-none focus:border-orange-500 transition">
                                     <span class="absolute right-3 top-2.5 text-xs text-slate-500">g</span>
                                 </div>
                             </div>
@@ -98,7 +98,7 @@
                         <div>
                             <div class="flex justify-between items-center mb-1">
                                 <label class="block text-xs font-medium text-slate-400">Vrsta in količina kvasa</label>
-                                <span class="text-[10px] text-slate-500" id="yeastHint">suhi: 0.1–0.2 %</span>
+                                <span class="text-[10px] text-slate-500" id="yeastHint">suhi: 0.05–0.1 %</span>
                             </div>
                             <div class="grid grid-cols-2 gap-2 mb-2 p-1 bg-slate-950 rounded-xl border border-slate-800">
                                 <button type="button" id="btnDryYeast" onclick="setYeastType('dry')" class="py-1.5 text-xs font-semibold rounded-lg bg-orange-500 text-slate-950 transition">
@@ -109,25 +109,8 @@
                                 </button>
                             </div>
                             <div class="relative">
-                                <input type="number" id="yeastPct" value="0.2" min="0.01" max="3" step="0.05" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-slate-100 font-semibold focus:outline-none focus:border-orange-500 transition">
+                                <input type="number" id="yeastPct" value="0.05" min="0.01" max="3" step="0.01" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-slate-100 font-semibold focus:outline-none focus:border-orange-500 transition">
                                 <span class="absolute right-3 top-2 text-xs text-slate-500">%</span>
-                            </div>
-                        </div>
-
-                        <div class="pt-2 border-t border-slate-800/80 grid grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-xs font-medium text-slate-400 mb-1">Olje <span class="text-[10px] text-slate-500">(0–2%)</span></label>
-                                <div class="relative">
-                                    <input type="number" id="oilPct" value="0" min="0" max="10" step="0.5" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-slate-100 font-semibold focus:outline-none focus:border-orange-500 transition">
-                                    <span class="absolute right-3 top-2 text-xs text-slate-500">%</span>
-                                </div>
-                            </div>
-                            <div>
-                                <label class="block text-xs font-medium text-slate-400 mb-1">Med <span class="text-[10px] text-slate-500">(0.5–1%)</span></label>
-                                <div class="relative">
-                                    <input type="number" id="sugarPct" value="0.5" min="0" max="5" step="0.1" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-slate-100 font-semibold focus:outline-none focus:border-orange-500 transition">
-                                    <span class="absolute right-3 top-2 text-xs text-slate-500">%</span>
-                                </div>
                             </div>
                         </div>
 
@@ -140,11 +123,11 @@
                 <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 flex items-center justify-between shadow-lg">
                     <div>
                         <p class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Skupna masa testa</p>
-                        <p id="totalWeightDisplay" class="text-3xl font-extrabold text-white mt-1">1040 <span class="text-base font-normal text-slate-400">g</span></p>
+                        <p id="totalWeightDisplay" class="text-3xl font-extrabold text-white mt-1">1500 <span class="text-base font-normal text-slate-400">g</span></p>
                     </div>
                     <div class="text-right border-l border-slate-800 pl-6">
-                        <p class="text-xs text-slate-400">Skupaj moka: <span id="totalFlourDisplay" class="font-bold text-slate-200">617g</span></p>
-                        <p class="text-xs text-slate-400">Skupaj voda: <span id="totalWaterDisplay" class="font-bold text-slate-200">401g</span></p>
+                        <p class="text-xs text-slate-400">Skupaj moka: <span id="totalFlourDisplay" class="font-bold text-slate-200">900g</span></p>
+                        <p class="text-xs text-slate-400">Skupaj voda: <span id="totalWaterDisplay" class="font-bold text-slate-200">585g</span></p>
                     </div>
                 </div>
 
@@ -165,22 +148,18 @@
                         <ul class="space-y-2.5 text-sm">
                             <li class="flex justify-between items-center border-b border-slate-800/80 pb-1.5">
                                 <span class="text-slate-400">Moka:</span>
-                                <span id="poolishFlour" class="font-bold text-slate-100">185 g</span>
+                                <span id="poolishFlour" class="font-bold text-slate-100">270 g</span>
                             </li>
                             <li class="flex justify-between items-center border-b border-slate-800/80 pb-1.5">
                                 <span class="text-slate-400">Voda:</span>
-                                <span id="poolishWater" class="font-bold text-slate-100">185 g</span>
+                                <span id="poolishWater" class="font-bold text-slate-100">270 g</span>
                             </li>
                             <li class="flex justify-between items-center border-b border-slate-800/80 pb-1.5">
                                 <span class="text-slate-400">Kvas:</span>
                                 <div class="text-right">
-                                    <span id="poolishYeast" class="font-bold text-amber-400">1.23 g</span>
-                                    <p id="poolishSpoons" class="text-[11px] text-slate-400">(~2.5 x 1ml ali ~25 x 0,1ml)</p>
+                                    <span id="poolishYeast" class="font-bold text-amber-400">0.45 g</span>
+                                    <p id="poolishSpoons" class="text-[11px] text-slate-400">(~0.9 x 1ml ali ~9 x 0,1ml)</p>
                                 </div>
-                            </li>
-                            <li class="flex justify-between items-center">
-                                <span class="text-slate-400">Med / Sladkor:</span>
-                                <span id="poolishSugar" class="font-bold text-slate-100">3.1 g</span>
                             </li>
                         </ul>
                     </div>
@@ -200,19 +179,15 @@
                         <ul class="space-y-2.5 text-sm">
                             <li class="flex justify-between items-center border-b border-slate-800/80 pb-1.5">
                                 <span class="text-slate-400">Preostala moka:</span>
-                                <span id="mainFlour" class="font-bold text-slate-100">432 g</span>
+                                <span id="mainFlour" class="font-bold text-slate-100">630 g</span>
                             </li>
                             <li class="flex justify-between items-center border-b border-slate-800/80 pb-1.5">
                                 <span class="text-slate-400">Preostala voda:</span>
-                                <span id="mainWater" class="font-bold text-slate-100">216 g</span>
+                                <span id="mainWater" class="font-bold text-slate-100">315 g</span>
                             </li>
                             <li class="flex justify-between items-center border-b border-slate-800/80 pb-1.5">
                                 <span class="text-slate-400">Sol:</span>
-                                <span id="mainSalt" class="font-bold text-slate-100">17.3 g</span>
-                            </li>
-                            <li class="flex justify-between items-center">
-                                <span class="text-slate-400">Olje:</span>
-                                <span id="mainOil" class="font-bold text-slate-100">0 g</span>
+                                <span id="mainSalt" class="font-bold text-slate-100">25.2 g</span>
                             </li>
                         </ul>
                     </div>
@@ -230,7 +205,7 @@
                             <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">1</div>
                             <div>
                                 <p class="font-semibold text-slate-100">Priprava Poolisha</p>
-                                <p class="text-slate-400">Zmešaj moko v poolishu, vodo, celoten kvas in med v posodi ali kozarcu. Pusti <strong>1 uro na sobni temperaturi</strong>, nato prestavi v hladilnik (4–6 °C) za <strong>16–24 ur</strong>.</p>
+                                <p class="text-slate-400">V posodi zmešaj vodo in kvas, da se kvas stopi. Dodaj moko in premešaj (ni potrebno gnetenje), da ni več suhih delov. Pusti 1 do 2 uri na sobni temperaturi, nato prestavi v hladilnik za 18–24 ur.</p>
                             </div>
                         </div>
 
@@ -238,7 +213,7 @@
                             <div class="w-6 h-6 rounded-full bg-orange-500/20 text-orange-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">2</div>
                             <div>
                                 <p class="font-semibold text-slate-100">Zames glavnega testa</p>
-                                <p class="text-slate-400">V poolish dodaj preostalo vodo in razpusti. Postopoma dodajaj preostalo moko ter sol (in olje). Dobro vmesi do gladke strukture.</p>
+                                <p class="text-slate-400">K zrelemu poolishu dodaj preostalo moko in večji del vode (prihrani nekaj za kasneje). Začni gnetiti, ko se poveže, počasi vmešaj sol in preostalo vodo. Gneti do gladke in elastične strukture (končna temp. okoli 22–25 °C).</p>
                             </div>
                         </div>
 
@@ -246,7 +221,7 @@
                             <div class="w-6 h-6 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">3</div>
                             <div>
                                 <p class="font-semibold text-slate-100">Počitek in oblikovanje kroglic</p>
-                                <p class="text-slate-400">Pusti testo počivati 15–30 min pokrito. Oblikuj <span id="stepBallsCount">4</span> kroglic po <span id="stepBallWeight">260g</span>. Vzhajaj <strong>3–5 ur na sobni temp.</strong> pred peko ali v hladilniku do 24 ur.</p>
+                                <p class="text-slate-400">Pusti testo pokrito vzhajati na sobni temperaturi 1 do 2 uri. Nato oblikuj <span id="stepBallsCount">6</span> kroglic po <span id="stepBallWeight">250g</span>. Kugle pusti v škatli za vzhajanje še 2 do 4 ure na sobni temp. pred peko.</p>
                             </div>
                         </div>
                     </div>
@@ -269,7 +244,7 @@
 
     <script>
         let currentYeastType = 'dry';
-        const inputs = ['numBalls', 'ballWeight', 'hydration', 'saltPct', 'yeastPct', 'poolishPct', 'oilPct', 'sugarPct'];
+        const inputs = ['numBalls', 'ballWeight', 'hydration', 'saltPct', 'yeastPct', 'poolishPct'];
         
         lucide.createIcons();
 
@@ -296,8 +271,8 @@
             } else {
                 btnFresh.className = "py-1.5 text-xs font-semibold rounded-lg bg-orange-500 text-slate-950 transition";
                 btnDry.className = "py-1.5 text-xs font-semibold rounded-lg text-slate-400 hover:text-slate-200 transition";
-                yeastPctInput.value = 0.6;
-                yeastHint.innerText = 'sveži: 0.5–0.6 %';
+                yeastPctInput.value = 0.15;
+                yeastHint.innerText = 'sveži: 0.15–0.3 %';
             }
             calculate();
         }
@@ -309,31 +284,25 @@
             const saltPct = parseFloat(document.getElementById('saltPct').value) || 0;
             const yeastPct = parseFloat(document.getElementById('yeastPct').value) || 0;
             const poolishPct = parseFloat(document.getElementById('poolishPct').value) || 0;
-            const oilPct = parseFloat(document.getElementById('oilPct').value) || 0;
-            const sugarPct = parseFloat(document.getElementById('sugarPct').value) || 0;
 
             document.getElementById('hydrationValue').innerText = `${hydration} %`;
             document.getElementById('poolishPctValue').innerText = `${poolishPct} %`;
 
             const totalWeight = numBalls * ballWeight;
-            const totalPct = 100 + hydration + saltPct + yeastPct + oilPct + sugarPct;
+            const totalPct = 100 + hydration + saltPct + yeastPct;
 
             const totalFlour = totalWeight / (totalPct / 100);
             const totalWater = totalFlour * (hydration / 100);
             const totalSalt = totalFlour * (saltPct / 100);
             const totalYeast = totalFlour * (yeastPct / 100);
-            const totalOil = totalFlour * (oilPct / 100);
-            const totalSugar = totalFlour * (sugarPct / 100);
 
             const poolishFlour = totalFlour * (poolishPct / 100);
             const poolishWater = poolishFlour;
             const poolishYeast = totalYeast;
-            const poolishSugar = totalSugar;
 
             const mainFlour = totalFlour - poolishFlour;
             const mainWater = totalWater - poolishWater;
             const mainSalt = totalSalt;
-            const mainOil = totalOil;
 
             document.getElementById('totalWeightDisplay').innerHTML = `${Math.round(totalWeight)} <span class="text-base font-normal text-slate-400">g</span>`;
             document.getElementById('totalFlourDisplay').innerText = `${Math.round(totalFlour)}g`;
@@ -348,17 +317,16 @@
                 const spoons1ml = (totalYeast / 0.5).toFixed(1);
                 const spoons01ml = Math.round(totalYeast / 0.05);
                 poolishSpoonsEl.innerText = `(~${spoons1ml} x 1ml ali ~${spoons01ml} x 0,1ml)`;
-                poolishSpoonsEl.classList.remove('hidden');
             } else {
-                poolishSpoonsEl.classList.add('hidden');
+                const mlFresh = (totalYeast / 0.9).toFixed(1);
+                const tspFresh = (totalYeast / 4).toFixed(1);
+                poolishSpoonsEl.innerText = `(~${mlFresh} ml ali ~${tspFresh} čajne žličke)`;
             }
-
-            document.getElementById('poolishSugar').innerText = `${totalSugar.toFixed(1)} g`;
+            poolishSpoonsEl.classList.remove('hidden');
 
             document.getElementById('mainFlour').innerText = `${Math.round(mainFlour)} g`;
             document.getElementById('mainWater').innerText = `${Math.round(mainWater)} g`;
             document.getElementById('mainSalt').innerText = `${totalSalt.toFixed(1)} g`;
-            document.getElementById('mainOil').innerText = `${totalOil.toFixed(1)} g`;
 
             document.getElementById('stepBallsCount').innerText = numBalls;
             document.getElementById('stepBallWeight').innerText = `${ballWeight}g`;
@@ -372,13 +340,11 @@
             const poolishFlour = document.getElementById('poolishFlour').innerText;
             const poolishWater = document.getElementById('poolishWater').innerText;
             const poolishYeast = document.getElementById('poolishYeast').innerText;
-            const poolishSpoons = currentYeastType === 'dry' ? document.getElementById('poolishSpoons').innerText : '';
-            const poolishSugar = document.getElementById('poolishSugar').innerText;
+            const poolishSpoons = document.getElementById('poolishSpoons').innerText;
 
             const mainFlour = document.getElementById('mainFlour').innerText;
             const mainWater = document.getElementById('mainWater').innerText;
             const mainSalt = document.getElementById('mainSalt').innerText;
-            const mainOil = document.getElementById('mainOil').innerText;
 
             const recipeText = `🍕 RECEPT ZA PICA TESTO (POOLISH) 🍕
 Število kroglic: ${numBalls} x ${ballWeight}g | Hidracija: ${hydration}%
@@ -387,15 +353,13 @@
 • Moka: ${poolishFlour}
 • Voda: ${poolishWater}
 • Kvas (${currentYeastType === 'dry' ? 'suhi' : 'sveži'}): ${poolishYeast} ${poolishSpoons}
-• Sladkor/Med: ${poolishSugar}
-⏳ 1h na sobni temp + 16-24h v hladilniku (4-6°C)
+⏳ 1-2h na sobni temp + 18-24h v hladilniku (4-6°C)
 
 2. GLAVNO TESTO:
 • Preostala moka: ${mainFlour}
 • Preostala voda: ${mainWater}
 • Sol: ${mainSalt}
-• Olje: ${mainOil}
-⏳ Zamesi, odmor 20 min, oblikuj kroglice in vzhajaj 3-5h na sobni temp!`;
+⏳ Zamesi, odmor 1-2h na sobni temp, oblikuj kroglice in vzhajaj 2-4h na sobni temp!`;
 
             navigator.clipboard.writeText(recipeText).then(() => {
                 showToast();
