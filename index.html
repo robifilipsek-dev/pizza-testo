@@ -6,32 +6,41 @@
     <title>Pica Poolish Kalkulator</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- PWA & Mobile Optimization -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Poolish Kalkulator">
+    <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcng9IjExMiIgZmlsbD0jMGYxNzJhIi8+PHBhdG0gZD0iTTI1NiA5NkM2NCA5NkM2NCA0MTYgMjU2IDQxNlM0NDggNDE2IDQ0OCA5NkwyNTYgOTZaIiBmaWxsPSIjZjViMDIzIi8+PHBhdG0gZD0iTTI1NiAxMjRDMTEwIDEyNCA4MSA0MDAgMjU2IDQwMFM0MDIgMTI0IDI1NiAxMjRaIiBmaWxsPSIjMWUxOTI0Ii8+PHBhdG0gZD0iTTI1NiAxNTBDMTQ2IDE1MCAxMjggMzgwIDI1NiAzODBTMzgzIDE1MCAyNTYgMTUwWiIgZmlsbD0jZjhiMDIzIi8+PC9zdmc+">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcng9IjExMiIgZmlsbD0jMGYxNzJhIi8+PHBhdG0gZD0iTTI1NiA5NkM2NCA5NkM2NCA0MTYgMjU2IDQxNlM0NDggNDE2IDQ0OCA5NkwyNTYgOTZaIiBmaWxsPSIjZjViMDIzIi8+PHBhdG0gZD0iTTI1NiAxMjRDMTEwIDEyNCA4MSA0MDAgMjU2IDQwMFM0MDIgMTI0IDI1NiAxMjRaIiBmaWxsPSIjMWUxOTI0Ii8+PHBhdG0gZD0iTTI1NiAxNTBDMTQ2IDE1MCAxMjggMzgwIDI1NiAzODBTMzgzIDE1MCAyNTYgMTUwWiIgZmlsbD0jZjhiMDIzIi8+PC9zdmc+">
+    <link rel="manifest" href="data:application/manifest+json;base64,eyJuYW1lIjoiUGljYSBQb29saXNoIEthbGt1bGF0b3IiLCJzaG9ydF9uYW1lIjoiUG9vbGlzaCIsImNvbG9ycyI6eyJCYWNrZ3JvdW5kIjoiIzBmMzE3MmEifSwic3RhcnRfdXJsIjoiLiIsImRpc3BsYXkiOiJzdGFuZGFsb25lIiwiaWNvbnMiOlt7InNyYyI6ImRhdGE6aW1hZ2Uvc3ZnK3htbDtiYXNlNjQsUEhUTmRIaHZkWE5sYm01aGJtTnNaV0poY25WdVpXUXRJanBiSW1WdVpHVnlhUzVuWlhKaFkyOW5hWEJsY0M5emN5NW5hWEpoWTJ9XX0=">
+
     <style>
         ::-webkit-scrollbar {
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #0f172a;
+            background: #090d16;
         }
         ::-webkit-scrollbar-thumb {
-            background: #334155;
+            background: #1e293b;
             border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #475569;
+            background: #334155;
         }
     </style>
 </head>
-<body class="bg-slate-950 text-slate-100 min-h-screen font-sans pb-12 antialiased">
+<body class="bg-[#090d16] text-slate-100 min-h-screen font-sans pb-12 antialiased">
 
-    <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-50">
+    <header class="border-b border-amber-500/20 bg-[#0c101d]/90 backdrop-blur sticky top-0 z-50">
         <div class="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
             <div class="flex items-center space-x-3">
-                <div class="p-2 bg-orange-500/10 text-orange-500 rounded-xl border border-orange-500/20">
+                <div class="p-2 bg-amber-500/10 text-amber-400 rounded-xl border border-amber-500/30 shadow-lg shadow-amber-500/5">
                     <i data-lucide="pizza" class="w-7 h-7"></i>
                 </div>
                 <div>
-                    <h1 class="text-xl font-bold bg-gradient-to-r from-orange-400 via-amber-300 to-orange-500 bg-clip-text text-transparent">
+                    <h1 class="text-xl font-bold bg-gradient-to-r from-amber-200 via-amber-400 to-yellow-500 bg-clip-text text-transparent">
                         Pizza Poolish
                     </h1>
                     <p class="text-xs text-slate-400">Kalkulator za testo in fermentacijo</p>
@@ -44,9 +53,9 @@
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
             
             <section class="lg:col-span-5 space-y-6">
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl">
+                <div class="bg-[#0e1422] border border-amber-500/20 rounded-2xl p-6 shadow-xl shadow-black/40">
                     <h2 class="text-lg font-semibold text-slate-100 mb-5 flex items-center gap-2">
-                        <i data-lucide="sliders" class="w-5 h-5 text-orange-400"></i>
+                        <i data-lucide="sliders" class="w-5 h-5 text-amber-400"></i>
                         Vhodni Parametri
                     </h2>
 
@@ -55,14 +64,14 @@
                             <div>
                                 <label class="block text-xs font-medium text-slate-400 mb-1">Število hlebčkov</label>
                                 <div class="relative">
-                                    <input type="number" id="numBalls" value="6" min="1" max="100" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-slate-100 font-semibold focus:outline-none focus:border-orange-500 transition">
+                                    <input type="number" id="numBalls" value="6" min="1" max="100" class="w-full bg-[#090d16] border border-slate-800 rounded-xl px-3 py-2.5 text-slate-100 font-semibold focus:outline-none focus:border-amber-500 transition">
                                     <span class="absolute right-3 top-2.5 text-xs text-slate-500">kos</span>
                                 </div>
                             </div>
                             <div>
                                 <label class="block text-xs font-medium text-slate-400 mb-1">Teža hlebčka</label>
                                 <div class="relative">
-                                    <input type="number" id="ballWeight" value="250" min="50" max="1000" step="5" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-slate-100 font-semibold focus:outline-none focus:border-orange-500 transition">
+                                    <input type="number" id="ballWeight" value="250" min="50" max="1000" step="5" class="w-full bg-[#090d16] border border-slate-800 rounded-xl px-3 py-2.5 text-slate-100 font-semibold focus:outline-none focus:border-amber-500 transition">
                                     <span class="absolute right-3 top-2.5 text-xs text-slate-500">g</span>
                                 </div>
                             </div>
@@ -71,17 +80,17 @@
                         <div>
                             <div class="flex justify-between items-center mb-1">
                                 <label class="text-xs font-medium text-slate-400">Hidracija <span class="text-[10px] text-slate-500">(prip. 65–70%)</span></label>
-                                <span id="hydrationValue" class="text-sm font-bold text-orange-400">65 %</span>
+                                <span id="hydrationValue" class="text-sm font-bold text-amber-400">65 %</span>
                             </div>
-                            <input type="range" id="hydration" min="55" max="85" value="65" step="1" class="w-full accent-orange-500 bg-slate-950 h-2 rounded-lg cursor-pointer">
+                            <input type="range" id="hydration" min="55" max="85" value="65" step="1" class="w-full accent-amber-500 bg-[#090d16] h-2 rounded-lg cursor-pointer">
                         </div>
 
                         <div>
                             <div class="flex justify-between items-center mb-1">
                                 <label class="text-xs font-medium text-slate-400">Moka v Poolishu <span class="text-[10px] text-slate-500">(prip. 20–30%)</span></label>
-                                <span id="poolishPctValue" class="text-sm font-bold text-amber-400">30 %</span>
+                                <span id="poolishPctValue" class="text-sm font-bold text-yellow-400">30 %</span>
                             </div>
-                            <input type="range" id="poolishPct" min="10" max="50" value="30" step="5" class="w-full accent-amber-500 bg-slate-950 h-2 rounded-lg cursor-pointer">
+                            <input type="range" id="poolishPct" min="10" max="50" value="30" step="5" class="w-full accent-yellow-500 bg-[#090d16] h-2 rounded-lg cursor-pointer">
                         </div>
 
                         <div>
@@ -90,7 +99,7 @@
                                 <span class="text-[10px] text-slate-500">priporočeno 2.5–3.0 %</span>
                             </div>
                             <div class="relative">
-                                <input type="number" id="saltPct" value="2.8" min="0" max="5" step="0.1" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-slate-100 font-semibold focus:outline-none focus:border-orange-500 transition">
+                                <input type="number" id="saltPct" value="2.8" min="0" max="5" step="0.1" class="w-full bg-[#090d16] border border-slate-800 rounded-xl px-3 py-2 text-slate-100 font-semibold focus:outline-none focus:border-amber-500 transition">
                                 <span class="absolute right-3 top-2 text-xs text-slate-500">%</span>
                             </div>
                         </div>
@@ -100,8 +109,8 @@
                                 <label class="block text-xs font-medium text-slate-400">Vrsta in količina kvasa</label>
                                 <span class="text-[10px] text-slate-500" id="yeastHint">suhi: 0.05–0.1 %</span>
                             </div>
-                            <div class="grid grid-cols-2 gap-2 mb-2 p-1 bg-slate-950 rounded-xl border border-slate-800">
-                                <button type="button" id="btnDryYeast" onclick="setYeastType('dry')" class="py-1.5 text-xs font-semibold rounded-lg bg-orange-500 text-slate-950 transition">
+                            <div class="grid grid-cols-2 gap-2 mb-2 p-1 bg-[#090d16] rounded-xl border border-slate-800">
+                                <button type="button" id="btnDryYeast" onclick="setYeastType('dry')" class="py-1.5 text-xs font-semibold rounded-lg bg-amber-500 text-slate-950 transition shadow">
                                     Suhi kvas
                                 </button>
                                 <button type="button" id="btnFreshYeast" onclick="setYeastType('fresh')" class="py-1.5 text-xs font-semibold rounded-lg text-slate-400 hover:text-slate-200 transition">
@@ -109,7 +118,7 @@
                                 </button>
                             </div>
                             <div class="relative">
-                                <input type="number" id="yeastPct" value="0.05" min="0.01" max="3" step="0.01" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-slate-100 font-semibold focus:outline-none focus:border-orange-500 transition">
+                                <input type="number" id="yeastPct" value="0.05" min="0.01" max="3" step="0.01" class="w-full bg-[#090d16] border border-slate-800 rounded-xl px-3 py-2 text-slate-100 font-semibold focus:outline-none focus:border-amber-500 transition">
                                 <span class="absolute right-3 top-2 text-xs text-slate-500">%</span>
                             </div>
                         </div>
@@ -120,21 +129,21 @@
 
             <section class="lg:col-span-7 space-y-6">
 
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 flex items-center justify-between shadow-lg">
+                <div class="bg-[#0e1422] border border-amber-500/20 rounded-2xl p-5 flex items-center justify-between shadow-xl shadow-black/40">
                     <div>
                         <p class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Skupna masa testa</p>
                         <p id="totalWeightDisplay" class="text-3xl font-extrabold text-white mt-1">1500 <span class="text-base font-normal text-slate-400">g</span></p>
                     </div>
                     <div class="text-right border-l border-slate-800 pl-6">
-                        <p class="text-xs text-slate-400">Skupaj moka: <span id="totalFlourDisplay" class="font-bold text-slate-200">900g</span></p>
-                        <p class="text-xs text-slate-400">Skupaj voda: <span id="totalWaterDisplay" class="font-bold text-slate-200">585g</span></p>
+                        <p class="text-xs text-slate-400">Skupaj moka: <span id="totalFlourDisplay" class="font-bold text-amber-200">900g</span></p>
+                        <p class="text-xs text-slate-400">Skupaj voda: <span id="totalWaterDisplay" class="font-bold text-amber-200">585g</span></p>
                     </div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     
-                    <div class="bg-slate-900 border border-amber-500/30 rounded-2xl p-5 relative overflow-hidden shadow-xl">
-                        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-500 to-orange-500"></div>
+                    <div class="bg-[#0e1422] border border-amber-500/30 rounded-2xl p-5 relative overflow-hidden shadow-xl">
+                        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-500 to-yellow-500"></div>
                         <div class="flex items-center justify-between mb-4">
                             <h3 class="font-bold text-amber-400 flex items-center gap-2">
                                 <i data-lucide="flask-conical" class="w-4 h-4"></i>
@@ -164,14 +173,14 @@
                         </ul>
                     </div>
 
-                    <div class="bg-slate-900 border border-orange-500/30 rounded-2xl p-5 relative overflow-hidden shadow-xl">
-                        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-500 to-red-500"></div>
+                    <div class="bg-[#0e1422] border border-amber-600/30 rounded-2xl p-5 relative overflow-hidden shadow-xl">
+                        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-yellow-500 to-amber-600"></div>
                         <div class="flex items-center justify-between mb-4">
-                            <h3 class="font-bold text-orange-400 flex items-center gap-2">
+                            <h3 class="font-bold text-yellow-400 flex items-center gap-2">
                                 <i data-lucide="chef-hat" class="w-4 h-4"></i>
                                 2. GLAVNO TESTO
                             </h3>
-                            <span class="text-[10px] font-semibold bg-orange-500/10 text-orange-300 border border-orange-500/20 px-2 py-0.5 rounded-full">
+                            <span class="text-[10px] font-semibold bg-yellow-500/10 text-yellow-300 border border-yellow-500/20 px-2 py-0.5 rounded-full">
                                 Zames
                             </span>
                         </div>
@@ -194,9 +203,9 @@
 
                 </div>
 
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-lg">
+                <div class="bg-[#0e1422] border border-amber-500/20 rounded-2xl p-5 shadow-lg">
                     <h3 class="font-bold text-slate-200 mb-3 flex items-center gap-2 text-sm">
-                        <i data-lucide="timer" class="w-4 h-4 text-orange-400"></i>
+                        <i data-lucide="timer" class="w-4 h-4 text-amber-400"></i>
                         Časovni vodič & Postopek Fermentacije
                     </h3>
 
@@ -205,29 +214,37 @@
                             <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">1</div>
                             <div>
                                 <p class="font-semibold text-slate-100">Priprava Poolisha</p>
-                                <p class="text-slate-400">V posodi zmešaj vodo in kvas, da se kvas stopi. Dodaj moko in premešaj (ni potrebno gnetenje), da ni več suhih delov. Pusti 1 do 2 uri na sobni temperaturi, nato prestavi v hladilnik za 18–24 ur.</p>
+                                <p class="text-slate-400">Zmešaj vodo in kvas, dodaj moko ter premešaj. Pusti 1–2 uri na sobni temperaturi, nato pa postavi v hladilnik za 16–24 ur, da postane lepo zrel in penast.</p>
                             </div>
                         </div>
 
                         <div class="flex gap-3 items-start">
-                            <div class="w-6 h-6 rounded-full bg-orange-500/20 text-orange-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">2</div>
+                            <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">2</div>
                             <div>
                                 <p class="font-semibold text-slate-100">Zames glavnega testa</p>
-                                <p class="text-slate-400">K zrelemu poolishu dodaj preostalo moko in večji del vode (prihrani nekaj za kasneje). Začni gnetiti, ko se poveže, počasi vmešaj sol in preostalo vodo. Gneti do gladke in elastične strukture (končna temp. okoli 22–25 °C).</p>
+                                <p class="text-slate-400">K zrelemu poolishu dodaj preostalo moko in večji del vode. Gneti, postopoma vmešaj sol in preostalo vodo, da dobiš gladko, elastično testo.</p>
                             </div>
                         </div>
 
                         <div class="flex gap-3 items-start">
-                            <div class="w-6 h-6 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">3</div>
+                            <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">3</div>
                             <div>
-                                <p class="font-semibold text-slate-100">Počitek in oblikovanje kroglic</p>
-                                <p class="text-slate-400">Pusti testo pokrito vzhajati na sobni temperaturi 1 do 2 uri. Nato oblikuj <span id="stepBallsCount">6</span> kroglic po <span id="stepBallWeight">250g</span>. Kugle pusti v škatli za vzhajanje še 2 do 4 ure na sobni temp. pred peko.</p>
+                                <p class="font-semibold text-slate-100">Oblikovanje in hladna fermentacija</p>
+                                <p class="text-slate-400">Pusti testo počivati 1 uro na sobni temp., nato oblikuj <span id="stepBallsCount">6</span> kroglic po <span id="stepBallWeight">250g</span>. Zapri v posodo za vzhajanje in postavi v hladilnik za <span class="text-amber-400 font-semibold">24–48 ur</span>.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-3 items-start">
+                            <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">4</div>
+                            <div>
+                                <p class="font-semibold text-slate-100">Temperiranje pred peko</p>
+                                <p class="text-slate-400">Pred peko vzemi kroglice iz hladilnika in jih pusti 2–3 ure na sobni temperaturi, da se ogrejejo in lažje raztegnejo.</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <button onclick="copyRecipe()" class="w-full bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-slate-950 font-bold py-3.5 px-6 rounded-xl shadow-lg transition flex items-center justify-center gap-2 group">
+                <button onclick="copyRecipe()" class="w-full bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-600 hover:to-yellow-600 text-slate-950 font-bold py-3.5 px-6 rounded-xl shadow-lg shadow-amber-500/10 transition flex items-center justify-center gap-2 group">
                     <i data-lucide="copy" class="w-5 h-5 group-hover:scale-110 transition-transform"></i>
                     Kopiraj recept v odlagališče (za telefon)
                 </button>
@@ -237,8 +254,8 @@
         </div>
     </main>
 
-    <div id="toast" class="fixed bottom-6 right-6 bg-slate-800 text-slate-100 border border-slate-700 px-4 py-3 rounded-xl shadow-2xl flex items-center gap-3 translate-y-20 opacity-0 transition-all duration-300 pointer-events-none z-50">
-        <i data-lucide="check-circle" class="w-5 h-5 text-emerald-400"></i>
+    <div id="toast" class="fixed bottom-6 right-6 bg-[#0e1422] text-slate-100 border border-amber-500/30 px-4 py-3 rounded-xl shadow-2xl flex items-center gap-3 translate-y-20 opacity-0 transition-all duration-300 pointer-events-none z-50">
+        <i data-lucide="check-circle" class="w-5 h-5 text-amber-400"></i>
         <span class="text-sm font-medium">Recept uspešno kopiran!</span>
     </div>
 
@@ -264,12 +281,12 @@
             const yeastHint = document.getElementById('yeastHint');
 
             if (type === 'dry') {
-                btnDry.className = "py-1.5 text-xs font-semibold rounded-lg bg-orange-500 text-slate-950 transition";
+                btnDry.className = "py-1.5 text-xs font-semibold rounded-lg bg-amber-500 text-slate-950 transition shadow";
                 btnFresh.className = "py-1.5 text-xs font-semibold rounded-lg text-slate-400 hover:text-slate-200 transition";
                 yeastPctInput.value = 0.05;
                 yeastHint.innerText = 'suhi: 0.05–0.1 %';
             } else {
-                btnFresh.className = "py-1.5 text-xs font-semibold rounded-lg bg-orange-500 text-slate-950 transition";
+                btnFresh.className = "py-1.5 text-xs font-semibold rounded-lg bg-amber-500 text-slate-950 transition shadow";
                 btnDry.className = "py-1.5 text-xs font-semibold rounded-lg text-slate-400 hover:text-slate-200 transition";
                 yeastPctInput.value = 0.15;
                 yeastHint.innerText = 'sveži: 0.15–0.3 %';
@@ -353,13 +370,14 @@
 • Moka: ${poolishFlour}
 • Voda: ${poolishWater}
 • Kvas (${currentYeastType === 'dry' ? 'suhi' : 'sveži'}): ${poolishYeast} ${poolishSpoons}
-⏳ 1-2h na sobni temp + 18-24h v hladilniku (4-6°C)
+⏳ 1-2h na sobni temp + 16-24h v hladilniku
 
 2. GLAVNO TESTO:
 • Preostala moka: ${mainFlour}
 • Preostala voda: ${mainWater}
 • Sol: ${mainSalt}
-⏳ Zamesi, odmor 1-2h na sobni temp, oblikuj kroglice in vzhajaj 2-4h na sobni temp!`;
+⏳ Zamesi, odmor 1h, oblikuj kroglice ter jih postavi v hladilnik za 24-48 ur!
+⏳ Pred peko pusti kroglice 2-3h na sobni temperaturi.`;
 
             navigator.clipboard.writeText(recipeText).then(() => {
                 showToast();
