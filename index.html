@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pizza testo kalkulator</title>
+    <title>Pica Master Kalkulator</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     
@@ -45,14 +45,14 @@
                 </div>
                 <div>
                     <h1 class="text-xl font-bold bg-gradient-to-r from-amber-200 via-amber-400 to-yellow-500 bg-clip-text text-transparent">
-                        Pizza testo kalkulator
+                        Pica Master Kalkulator
                     </h1>
                     <p class="text-xs text-slate-400">Recepture za testo in pica kruhke</p>
                 </div>
             </div>
 
-            <!-- Gumb za Namestitev na Telefon -->
-            <button id="installBtn" onclick="installApp()" class="flex items-center gap-2 bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 border border-amber-500/30 text-xs font-semibold py-2 px-3.5 rounded-xl transition shadow">
+            <!-- Gumb za Namestitev (Skrit po privzetem, prikaže se ko je PWA ready) -->
+            <button id="installBtn" onclick="installApp()" class="hidden flex items-center gap-2 bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 border border-amber-500/30 text-xs font-semibold py-2 px-3.5 rounded-xl transition shadow">
                 <i data-lucide="download" class="w-4 h-4"></i>
                 <span class="hidden sm:inline">Namesti aplikacijo</span>
                 <span class="sm:hidden">Namesti</span>
@@ -199,12 +199,12 @@
                     <!-- Kartica 1 (Predtesto / Poolish / Biga / Droži) -->
                     <div id="cardPreferment" class="bg-[#0e1422] border border-amber-500/30 rounded-2xl p-5 relative overflow-hidden shadow-xl">
                         <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-500 to-yellow-500"></div>
-                        <div class="flex items-center justify-between mb-4">
-                            <h3 id="card1Title" class="font-bold text-amber-400 flex items-center gap-2">
+                        <div class="flex flex-wrap sm:flex-nowrap items-center justify-between gap-2 mb-4">
+                            <h3 id="card1Title" class="font-bold text-amber-400 flex items-center gap-2 whitespace-nowrap">
                                 <i data-lucide="flask-conical" class="w-4 h-4"></i>
                                 1. POOLISH
                             </h3>
-                            <span id="card1Badge" class="text-[10px] font-semibold bg-amber-500/10 text-amber-300 border border-amber-500/20 px-2 py-0.5 rounded-full">
+                            <span id="card1Badge" class="text-[10px] font-semibold bg-amber-500/10 text-amber-300 border border-amber-500/20 px-2.5 py-0.5 rounded-full whitespace-nowrap">
                                 100% Hidracija
                             </span>
                         </div>
@@ -231,12 +231,12 @@
                     <!-- Kartica 2 (Glavno testo / Direktno testo / Kruhki) -->
                     <div id="cardMainDough" class="bg-[#0e1422] border border-amber-600/30 rounded-2xl p-5 relative overflow-hidden shadow-xl">
                         <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-yellow-500 to-amber-600"></div>
-                        <div class="flex items-center justify-between mb-4">
-                            <h3 id="card2Title" class="font-bold text-yellow-400 flex items-center gap-2">
+                        <div class="flex flex-wrap sm:flex-nowrap items-center justify-between gap-2 mb-4">
+                            <h3 id="card2Title" class="font-bold text-yellow-400 flex items-center gap-2 whitespace-nowrap">
                                 <i data-lucide="chef-hat" class="w-4 h-4"></i>
                                 2. GLAVNO TESTO
                             </h3>
-                            <span id="card2Badge" class="text-[10px] font-semibold bg-yellow-500/10 text-yellow-300 border border-yellow-500/20 px-2 py-0.5 rounded-full">
+                            <span id="card2Badge" class="text-[10px] font-semibold bg-yellow-500/10 text-yellow-300 border border-yellow-500/20 px-2.5 py-0.5 rounded-full whitespace-nowrap">
                                 Zames
                             </span>
                         </div>
@@ -264,6 +264,37 @@
                         </ul>
                     </div>
 
+                </div>
+
+                <!-- Vodnik za vzgojo droži (Prikazan le pri zavihku Droži) -->
+                <div id="sourdoughStarterGuide" class="hidden bg-[#0e1422] border border-emerald-500/30 rounded-2xl p-5 shadow-lg relative overflow-hidden">
+                    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-500 to-teal-400"></div>
+                    <h3 class="font-bold text-emerald-400 mb-2 flex items-center gap-2 text-sm">
+                        <i data-lucide="sprout" class="w-4 h-4"></i>
+                        Vzgoja lastnih droži od ničle (7-dnevni vodnik)
+                    </h3>
+                    <p class="text-xs text-slate-400 mb-4">Za uspeh potrebuješ le steklen kozarec, vodo sobne temperature ter polnozrnato ali rženo moko (za začetek) in belo moko T500/T850.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs text-slate-300">
+                        <div class="bg-[#090d16] p-2.5 rounded-xl border border-slate-800">
+                            <span class="font-bold text-emerald-300">1. Dan:</span> Zmešaj 50g ržene/polnozrnate moke in 50g mlačne vode. Pokrij z ohlapnim pokrovom. Pusti na sobni temp. (22–24°C).
+                        </div>
+                        <div class="bg-[#090d16] p-2.5 rounded-xl border border-slate-800">
+                            <span class="font-bold text-emerald-300">2. Dan:</span> Počitek. Če vidiš mehurčke, nežno premešaj. Ni še potrebno hraniti.
+                        </div>
+                        <div class="bg-[#090d16] p-2.5 rounded-xl border border-slate-800">
+                            <span class="font-bold text-emerald-300">3. Dan:</span> Odstrani poldrugo žlico mešanice (ostane cca 30g). Dodaj 30g bele moke in 30g vode (razmerje 1:1:1).
+                        </div>
+                        <div class="bg-[#090d16] p-2.5 rounded-xl border border-slate-800">
+                            <span class="font-bold text-emerald-300">4. & 5. Dan:</span> Ponovi hranjenje vsakih 24 ur (30g droži + 30g moke + 30g vode). Vonj postaja kiselkast.
+                        </div>
+                        <div class="bg-[#090d16] p-2.5 rounded-xl border border-slate-800">
+                            <span class="font-bold text-emerald-300">6. Dan:</span> Droži morajo po hranjenju v 4–6 urah narasti na vsaj dvojno količino.
+                        </div>
+                        <div class="bg-[#090d16] p-2.5 rounded-xl border border-slate-800">
+                            <span class="font-bold text-emerald-300">7. Dan:</span> Droži so pripravljene! Test plovnosti: žličko droži vrzi v vodo – če plava, je pripravljena za testo.
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Časovni vodič in Navodila -->
@@ -308,11 +339,9 @@
 
         function getYeastSpoonsText(yeastGrams, yeastType) {
             if (yeastType === 'dry') {
-                // Suhi kvas ~0,05 g na 0,1ml žličko
                 const spoons = (yeastGrams / 0.05).toFixed(1).replace('.', ',');
                 return `(~${spoons} x 0,1ml žličke)`;
             } else {
-                // Sveži kvas ~3 g na čajno žličko (5ml)
                 const tsp = (yeastGrams / 3).toFixed(1).replace('.', ',');
                 return `(~${tsp} čajne žličke)`;
             }
@@ -320,78 +349,130 @@
 
         lucide.createIcons();
 
-        inputs.forEach(id => {
-            const el = document.getElementById(id);
-            if(el) {
-                el.addEventListener('input', calculate);
-                el.addEventListener('change', calculate);
-            }
-        });
-
-        // PWA Install Prompt Logic
+        // PWA Install Logic (Avtomatski sistemski poziv + avtomatsko skrivanje gumba)
         window.addEventListener('beforeinstallprompt', (e) => {
             e.preventDefault();
             deferredPrompt = e;
             const btn = document.getElementById('installBtn');
-            if(btn) btn.classList.remove('hidden');
+            if(btn && !window.matchMedia('(display-mode: standalone)').matches) {
+                btn.classList.remove('hidden');
+            }
         });
 
-        function installApp() {
-            if (deferredPrompt) {
-                deferredPrompt.prompt();
-                deferredPrompt.userChoice.then((choiceResult) => {
-                    if (choiceResult.outcome === 'accepted') {
-                        console.log('Aplikacija je bila nameščena.');
-                    }
-                    deferredPrompt = null;
+        async function installApp() {
+            if (!deferredPrompt) return;
+            deferredPrompt.prompt();
+            const { outcome } = await deferredPrompt.userChoice;
+            if (outcome === 'accepted') {
+                console.log('Aplikacija je bila nameščena.');
+            }
+            deferredPrompt = null;
+            const btn = document.getElementById('installBtn');
+            if (btn) btn.classList.add('hidden');
+        }
+
+        window.addEventListener('appinstalled', () => {
+            const btn = document.getElementById('installBtn');
+            if (btn) btn.classList.add('hidden');
+            deferredPrompt = null;
+        });
+
+        // Preverjanje LocalStorage ob zagonu
+        function saveParamsToStorage() {
+            const params = {};
+            inputs.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) params[id] = el.value;
+            });
+            params['yeastType'] = currentYeastType;
+            params['currentTab'] = currentTab;
+            localStorage.setItem('pica_calc_params', JSON.stringify(params));
+        }
+
+        function loadParamsFromStorage() {
+            const saved = localStorage.getItem('pica_calc_params');
+            if (!saved) return;
+            try {
+                const params = JSON.parse(saved);
+                inputs.forEach(id => {
+                    const el = document.getElementById(id);
+                    if (el && params[id] !== undefined) el.value = params[id];
                 });
-            } else {
-                alert("Za namestitev aplikacije na telefon:\n\n• iOS (Safari): Pritisni ikono za deljenje 'Deli' (kvadrat s puščico) in izberi 'Dodaj na domači zaslon'.\n\n• Android (Chrome): Klikni na 3 pikice zgoraj desno in izberi 'Namesti aplikacijo' ali 'Dodaj na začetni zaslon'.");
+                if (params.yeastType) {
+                    currentYeastType = params.yeastType;
+                    updateYeastButtonsUI();
+                }
+                if (params.currentTab) {
+                    currentTab = params.currentTab;
+                    updateTabUI();
+                }
+            } catch(e) {
+                console.error('Napaka pri branju shranjenih parametrov', e);
             }
         }
 
-        function switchTab(tab) {
+        inputs.forEach(id => {
+            const el = document.getElementById(id);
+            if(el) {
+                el.addEventListener('input', () => { calculate(); saveParamsToStorage(); });
+                el.addEventListener('change', () => { calculate(); saveParamsToStorage(); });
+            }
+        });
+
+        function switchTab(tab, shouldSave = true) {
             currentTab = tab;
+            updateTabUI();
+            calculate();
+            if (shouldSave) saveParamsToStorage();
+        }
+
+        function updateTabUI() {
             document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-            document.getElementById(`tab-${tab}`).classList.add('active');
+            const activeTabBtn = document.getElementById(`tab-${currentTab}`);
+            if (activeTabBtn) activeTabBtn.classList.add('active');
 
-            // Prikaz pravih vhodnih parametrov
-            document.getElementById('poolishParamGroup').classList.toggle('hidden', tab !== 'poolish');
-            document.getElementById('bigaParamGroup').classList.toggle('hidden', tab !== 'biga');
-            document.getElementById('sourdoughParamGroup').classList.toggle('hidden', tab !== 'sourdough');
-            document.getElementById('yeastGroup').classList.toggle('hidden', tab === 'sourdough');
+            document.getElementById('poolishParamGroup').classList.toggle('hidden', currentTab !== 'poolish');
+            document.getElementById('bigaParamGroup').classList.toggle('hidden', currentTab !== 'biga');
+            document.getElementById('sourdoughParamGroup').classList.toggle('hidden', currentTab !== 'sourdough');
+            document.getElementById('yeastGroup').classList.toggle('hidden', currentTab === 'sourdough');
 
-            // Prilagoditev oznak za kruhke
-            if (tab === 'breadrolls') {
+            // Prikaz vodiča za droži
+            const sourdoughGuide = document.getElementById('sourdoughStarterGuide');
+            if (sourdoughGuide) sourdoughGuide.classList.toggle('hidden', currentTab !== 'sourdough');
+
+            if (currentTab === 'breadrolls') {
                 document.getElementById('labelNumItems').innerText = 'Število kruhkov';
                 document.getElementById('labelItemWeight').innerText = 'Teža kruhka';
             } else {
                 document.getElementById('labelNumItems').innerText = 'Število hlebčkov';
                 document.getElementById('labelItemWeight').innerText = 'Teža hlebčka';
             }
-
-            calculate();
         }
 
         function setYeastType(type) {
             currentYeastType = type;
+            updateYeastButtonsUI();
+            calculate();
+            saveParamsToStorage();
+        }
+
+        function updateYeastButtonsUI() {
             const btnDry = document.getElementById('btnDryYeast');
             const btnFresh = document.getElementById('btnFreshYeast');
             const yeastPctInput = document.getElementById('yeastPct');
             const yeastHint = document.getElementById('yeastHint');
 
-            if (type === 'dry') {
+            if (currentYeastType === 'dry') {
                 btnDry.className = "py-1.5 text-xs font-semibold rounded-lg bg-amber-500 text-slate-950 transition shadow";
                 btnFresh.className = "py-1.5 text-xs font-semibold rounded-lg text-slate-400 hover:text-slate-200 transition";
-                yeastPctInput.value = 0.05;
+                if(!localStorage.getItem('pica_calc_params')) yeastPctInput.value = 0.05;
                 yeastHint.innerText = 'suhi: 0.05–0.1 %';
             } else {
                 btnFresh.className = "py-1.5 text-xs font-semibold rounded-lg bg-amber-500 text-slate-950 transition shadow";
                 btnDry.className = "py-1.5 text-xs font-semibold rounded-lg text-slate-400 hover:text-slate-200 transition";
-                yeastPctInput.value = 0.15;
+                if(!localStorage.getItem('pica_calc_params')) yeastPctInput.value = 0.15;
                 yeastHint.innerText = 'sveži: 0.15–0.3 %';
             }
-            calculate();
         }
 
         function calculate() {
@@ -589,28 +670,28 @@
                         <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">1</div>
                         <div>
                             <p class="font-semibold text-slate-100">Priprava Poolisha</p>
-                            <p class="text-slate-400">V posodo daj vodo sobne temperature in kvas ter dobro premešaj, da se kvas povsem raztopi. Dodaj moko in mešaj z žlico ali metlico, dokler zmes ni popolnoma gladka, brez grudic (konsistenca gostejše palačinčne zmesi). Posodo tesno pokrij s folijo ali pokrovom, da se površina ne izsuši, ter pusti 1–2 uri na sobni temperaturi. Nato pokrito posodo prestavi v hladilnik za 16–24 ur, da poolish lepo zraste, postane penast in poln mehurčkov.</p>
+                            <p class="text-slate-400">V posodo daj vodo sobne temperature in kvas ter dobro premešaj. Dodaj moko in mešaj, dokler zmes ni popolnoma gladka. Pokrij in pusti 1–2 uri na sobni temperaturi, nato pa v hladilnik za 16–24 ur.</p>
                         </div>
                     </div>
                     <div class="flex gap-3 items-start">
                         <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">2</div>
                         <div>
                             <p class="font-semibold text-slate-100">Zames glavnega testa</p>
-                            <p class="text-slate-400">K zrelemu poolishu (poln mehurčkov, rahlo kisel vonj je normalen) dodaj preostalo moko in večji del preostale vode. Gneti približno 8–10 minut, nato postopoma dodajaj sol in preostanek vode, dokler testo ni gladko in elastično ter se ne lepi na roke (windowpane test – košček testa se da razpotegniti v tanko, prosojno folijo, ne da bi se strgal).</p>
+                            <p class="text-slate-400">K poolishu dodaj preostalo moko in večji del vode. Gneti 8–10 minut, nato vgneti sol in preostanek vode do gladkega testa.</p>
                         </div>
                     </div>
                     <div class="flex gap-3 items-start">
                         <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">3</div>
                         <div>
-                            <p class="font-semibold text-slate-100">Oblikovanje in hladna fermentacija</p>
-                            <p class="text-slate-400">Testo pokrito pusti počivati 1 uro na sobni temperaturi, nato ga razdeli in oblikuj v <span class="font-semibold text-slate-200">${numBalls}</span> hlebčkov po <span class="font-semibold text-slate-200">${ballWeight}g</span>. Vsak hlebček daj v dovolj veliko posodo (testo se poveča za cca. 1,5×) in jo tesno pokrij s pokrovom ali folijo. Postavi v hladilnik za 24–48 ur.</p>
+                            <p class="font-semibold text-slate-100">Prepogibanje testa (Stretch & Fold)</p>
+                            <p class="text-slate-400">Testo pusti počivati 15 minut. Nato z mokrimi rokami opravi 3 serije nategovanja in prepogibanja na vsakih 30 minut. To drastično okrepi glutensko mrežo ter izboljša strukturo in napihnjenost robov.</p>
                         </div>
                     </div>
                     <div class="flex gap-3 items-start">
                         <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">4</div>
                         <div>
-                            <p class="font-semibold text-slate-100">Temperiranje pred peko</p>
-                            <p class="text-slate-400">Pred peko vzemi hlebčke iz hladilnika, jih pokrite pusti 2–3 ure na sobni temperaturi, da se ogrejejo in lažje raztegnejo. Pica peč oz. kamen za peko naj se medtem dobro segreje na najvišjo temperaturo.</p>
+                            <p class="font-semibold text-slate-100">Oblikovanje in hladna fermentacija</p>
+                            <p class="text-slate-400">Testo razdeli na <span class="font-semibold text-slate-200">${numBalls}</span> hlebčkov po <span class="font-semibold text-slate-200">${ballWeight}g</span>, jih zapiši v posodo in postavi v hladilnik za 24–48 ur. Pred peko jih temperiraj 2–3 ure na sobni temperaturi.</p>
                         </div>
                     </div>
                 `;
@@ -620,28 +701,28 @@
                         <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">1</div>
                         <div>
                             <p class="font-semibold text-slate-100">Zames direktnega testa</p>
-                            <p class="text-slate-400">V posodi raztopi kvas v večjem delu hladne vode. Postopoma dodajaj moko in gneti z roko ali mešalnikom. Ko se sestavine povežejo, dodaj sol in preostanek vode. Gneti 10–12 minut, da dobiš popolnoma gladko, prožno in svilnato testo.</p>
+                            <p class="text-slate-400">V posodi raztopi kvas v večjem delu hladne vode. Postopoma dodajaj moko in gneti. Ko se sestavine povežejo, dodaj sol in preostanek vode. Gneti 10–12 minut.</p>
                         </div>
                     </div>
                     <div class="flex gap-3 items-start">
                         <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">2</div>
                         <div>
-                            <p class="font-semibold text-slate-100">Prvo vzhajanje (v kosu)</p>
-                            <p class="text-slate-400">Testo oblikuj v gladko kroglo, ga pokrij z vlažno krpo ali zaprto posodo ter pusti počivati na sobni temperaturi 1 do 2 uri, da se začne aktivno vzhajanje in sproščanje glutena.</p>
+                            <p class="font-semibold text-slate-100">Faza prepogibanja (Stretch & Fold)</p>
+                            <p class="text-slate-400">Po zamesu pokrij testo in naredi 2–3 serije prepogibanja na 30 minut. Gluten se bo odlično razvil, testo pa bo postalo svilnato in napeto.</p>
                         </div>
                     </div>
                     <div class="flex gap-3 items-start">
                         <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">3</div>
                         <div>
                             <p class="font-semibold text-slate-100">Oblikovanje hlebčkov in vzhajanje</p>
-                            <p class="text-slate-400">Razdeli testo na <span class="font-semibold text-slate-200">${numBalls}</span> hlebčkov po <span class="font-semibold text-slate-200">${ballWeight}g</span>. Vsak hlebček oblikuj v čvrsto kroglico in jih zloži v pomokano posodo za vzhajanje. Pokrij s pokrovom ali folijo.</p>
+                            <p class="text-slate-400">Razdeli testo na <span class="font-semibold text-slate-200">${numBalls}</span> hlebčkov po <span class="font-semibold text-slate-200">${ballWeight}g</span>. Oblikuj čvrste kroglice ter jih pokrij v posodi.</p>
                         </div>
                     </div>
                     <div class="flex gap-3 items-start">
                         <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">4</div>
                         <div>
-                            <p class="font-semibold text-slate-100">Zaključno vzhajanje in peka</p>
-                            <p class="text-slate-400">Za hitro peko pusti hlebčke vzhajati 4–6 ur na sobni temperaturi. Za maksimalen okus in lažjo prebavljivost pa posodo postavi v hladilnik za 24 ur (nato jih pred peko pusti 2–3 ure na sobni temperaturi, da se temperirajo).</p>
+                            <p class="font-semibold text-slate-100">Zaključno vzhajanje</p>
+                            <p class="text-slate-400">Vzhajaj 4–6 ur na sobni temperaturi ali pa posodo postavi v hladilnik za 24 ur (pred peko jih 2–3 ure temperiraj).</p>
                         </div>
                     </div>
                 `;
@@ -651,28 +732,28 @@
                         <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">1</div>
                         <div>
                             <p class="font-semibold text-slate-100">Priprava Bige (Suho predtesto)</p>
-                            <p class="text-slate-400">Kvas raztopi v mrzli vodi. V posodo daj moko, prelij z vodo in na hitro premešaj z roko ali vilicami (samo 1–2 minuti), da se vsa moka navlaži. Zmes mora ostati groba, suha in grudasta – ne smeš je pregneti v testo! Posodo pokrij in pusti fermentirati 16–18 ur na hladnejšem mestu (~18 °C).</p>
+                            <p class="text-slate-400">Kvas raztopi v mrzli vodi. V posodo daj moko, prelij z vodo in na hitro premešaj (1–2 minuti), da ostane groba, suha in grudasta. Pokrij in fermentiraj 16–18 ur pri ~18 °C.</p>
                         </div>
                     </div>
                     <div class="flex gap-3 items-start">
                         <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">2</div>
                         <div>
                             <p class="font-semibold text-slate-100">Zames glavnega testa</p>
-                            <p class="text-slate-400">Zrelo bigo nadrobi na manjše koščke v posodo mešalnika. Dodaj preostalo moko in približno 80 % preostale mrzle vode. Gneti na nizki hitrosti. Ko se testo poveže in postane prožno, počasi postopoma prilivaj preostanek vode ter na koncu vgneti sol.</p>
+                            <p class="text-slate-400">Bigo nadrobi v posodo mešalnika. Dodaj preostalo moko in 80 % hladne vode. Ko se poveže, počasi prilivaj preostanek vode ter vgneti sol.</p>
                         </div>
                     </div>
                     <div class="flex gap-3 items-start">
                         <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">3</div>
                         <div>
-                            <p class="font-semibold text-slate-100">Odmor in oblikovanje hlebčkov</p>
-                            <p class="text-slate-400">Pregneteno testo pokrij in pusti počivati v kosu 30–45 minut na sobni temperaturi. Nato ga razdeli na <span class="font-semibold text-slate-200">${numBalls}</span> hlebčkov po <span class="font-semibold text-slate-200">${ballWeight}g</span> in vsakega oblikuj v gladko kroglico.</p>
+                            <p class="font-semibold text-slate-100">Odmor in prepogibanje</p>
+                            <p class="text-slate-400">Testo pusti počivati 30–45 minut na sobni temperaturi. Enkrat do dvakrat ga nežno prepogni čez sebe, da se struktura popolnoma poravna in zgladi.</p>
                         </div>
                     </div>
                     <div class="flex gap-3 items-start">
                         <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">4</div>
                         <div>
-                            <p class="font-semibold text-slate-100">Zaključno vzhajanje</p>
-                            <p class="text-slate-400">Hlebčke pokrito pusti vzhajati na sobni temperaturi približno 2,5 do 3 ure, da lepo narastejo in postanejo mehki ter polni zraka, nato so pripravljeni za peko v vroči pica peči.</p>
+                            <p class="font-semibold text-slate-100">Oblikovanje in peka</p>
+                            <p class="text-slate-400">Razdeli na <span class="font-semibold text-slate-200">${numBalls}</span> hlebčkov po <span class="font-semibold text-slate-200">${ballWeight}g</span>. Vzhajaj pokrito 2,5 do 3 ure na sobni temperaturi do peke.</p>
                         </div>
                     </div>
                 `;
@@ -682,28 +763,28 @@
                         <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">1</div>
                         <div>
                             <p class="font-semibold text-slate-100">Autoliza in zames z drožmi</p>
-                            <p class="text-slate-400">Moko in večino vode zmešaj v enotno maso brez suhe moke ter pusti počivati 45–60 minut (autoliza). Nato dodaj aktivne, na vrhuncu bujenja pripravljene droži in temeljito vgneti. Po 30 minutah dodaj sol in preostanek vode ter gneti, dokler testo ne postane gladko.</p>
+                            <p class="text-slate-400">Moko in večino vode zmešaj v enotno maso in pusti počivati 45 minut (autoliza). Vgneti aktivne droži, po 30 minutah pa še sol in preostanek vode.</p>
                         </div>
                     </div>
                     <div class="flex gap-3 items-start">
                         <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">2</div>
                         <div>
                             <p class="font-semibold text-slate-100">Nategovanje in prepogibanje (Stretch & Fold)</p>
-                            <p class="text-slate-400">Testo pusti vzhajati na sobni temperaturi 3–4 ure. V prvih dveh urah vsakih 30 minut opravi serijo nategovanja in prepogibanja testa (skupaj 3–4 serije), da zgradiš močno glutensko mrežo.</p>
+                            <p class="text-slate-400">V prvih 2 urah opravi 3–4 serije nategovanja in prepogibanja na vsakih 30 minut, da zgradiš močno glutensko mrežo.</p>
                         </div>
                     </div>
                     <div class="flex gap-3 items-start">
                         <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">3</div>
                         <div>
                             <p class="font-semibold text-slate-100">Oblikovanje in hladna fermentacija</p>
-                            <p class="text-slate-400">Ko se volumetrično testo poveča za cca. 50 %, ga razdeli na <span class="font-semibold text-slate-200">${numBalls}</span> hlebčkov po <span class="font-semibold text-slate-200">${ballWeight}g</span>. Oblikuj gladke kroglice, jih zapri v posodo in postavi v hladilnik na hladno fermentacijo za 24–36 ur.</p>
+                            <p class="text-slate-400">Razdeli na <span class="font-semibold text-slate-200">${numBalls}</span> hlebčkov po <span class="font-semibold text-slate-200">${ballWeight}g</span>, zapri v posodo in postavi v hladilnik na hladno fermentacijo za 24–36 ur.</p>
                         </div>
                     </div>
                     <div class="flex gap-3 items-start">
                         <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">4</div>
                         <div>
                             <p class="font-semibold text-slate-100">Temperiranje pred peko</p>
-                            <p class="text-slate-400">Pripravljene hlebčke vzemi iz hladilnika 2 uri pred peko, da dosežejo sobno temperaturo. Peci v močno segreti pica peči za značilen videz z mehurčki in hrustljavo skorjo.</p>
+                            <p class="text-slate-400">Vzemi hlebčke iz hladilnika 2 uri pred peko, da se ogrejejo na sobno temperaturo.</p>
                         </div>
                     </div>
                 `;
@@ -713,28 +794,21 @@
                         <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">1</div>
                         <div>
                             <p class="font-semibold text-slate-100">Priprava testa za kruhke</p>
-                            <p class="text-slate-400">Testo zamesi po direktnem postopku (lahko pa uporabiš tudi preostale hlebčke pica testa!). Testo razdeli na <span class="font-semibold text-slate-200">${numBalls}</span> kosov po <span class="font-semibold text-slate-200">${ballWeight}g</span> ter jih oblikuj v podolgovate štručke ali manjše kruhke.</p>
+                            <p class="text-slate-400">Zamesi testo ter ga razdeli na <span class="font-semibold text-slate-200">${numBalls}</span> kosov po <span class="font-semibold text-slate-200">${ballWeight}g</span>. Oblikuj podolgovate štručke ali manjše kruhke.</p>
                         </div>
                     </div>
                     <div class="flex gap-3 items-start">
                         <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">2</div>
                         <div>
                             <p class="font-semibold text-slate-100">Vzhajanje štručk</p>
-                            <p class="text-slate-400">Oblikovane štručke položi v posodo ali na pomokano površino, pokrij s folijo in pusti vzhajati 2–3 ure na sobni temperaturi, da lepo narastejo in se sprostijo.</p>
+                            <p class="text-slate-400">Oblikovane štručke pokrij s folijo in pusti vzhajati 2–3 ure na sobni temperaturi.</p>
                         </div>
                     </div>
                     <div class="flex gap-3 items-start">
                         <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">3</div>
                         <div>
                             <p class="font-semibold text-slate-100">Peka na preostali toploti pica peči 🔥</p>
-                            <p class="text-slate-400">Ko zaključiš s peko pic, zmanjšaj plamen pica peči na minimum ali ga povsem ugasni (temperatura kamna naj pade na ~300–320 °C). Štručke nežno raztegni po dolžini in položi na kamen. Peci nekaj minut, da se lepo napihnejo in dobijo zlato-rumeno hrustljavo skorjo.</p>
-                        </div>
-                    </div>
-                    <div class="flex gap-3 items-start">
-                        <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">4</div>
-                        <div>
-                            <p class="font-semibold text-slate-100">Postrežba in polnjenje (Panuozzo)</p>
-                            <p class="text-slate-400">Pečene kruhke takoj po peki po dolžini prereži na pol. Napolni jih s svežo mocarelo, pršutom, rukolo, svežim paradižnikom ali oljčnim oljem ter po želji vrni v peč za 1 minutko, da se sir lepo rastopi.</p>
+                            <p class="text-slate-400">Po peki pic zmanjšaj ali ugasni plamen (kamen na ~300–320 °C). Štručke peci nekaj minut do zlato-rumene hrustljave skorje.</p>
                         </div>
                     </div>
                 `;
@@ -767,16 +841,14 @@
 • Moka: ${val1_1}
 • Voda: ${val1_2}
 • Kvas (${yeastName}): ${val1_3} ${val1_3_hint}
-Zmešaj vodo in kvas, dodaj moko, mešaj do gladke zmesi brez grudic. Posodo tesno pokrij!
-⏳ 1–2h na sobni temp (pokrito) + 16–24h v hladilniku (pokrito)
+⏳ 1–2h na sobni temp + 16–24h v hladilniku
 
 2. GLAVNO TESTO:
 • Preostala moka: ${val2_1}
 • Preostala voda: ${val2_2}
 • Sol: ${val2_salt}
-Zamesi 8–10 min do gladkega, elastičnega testa (windowpane test).
-⏳ Odmor 1h pokrito, oblikuj ${itemLabel}, v pokrito posodo in v hladilnik za 24–48 ur!
-⏳ Pred peko pusti ${itemLabel} pokrite 2–3h na sobni temperaturi.`;
+⏳ Gneti, izvedi 3 serije Stretch & Fold (prepogibanje) na 30 min.
+⏳ Oblikuj ${itemLabel}, hramba v hladilniku 24–48h.`;
 
             } else if (currentTab === 'direct') {
                 const val2_1 = document.getElementById('val2_1').innerText;
@@ -794,11 +866,7 @@ SESTAVINE:
 • Kvas (${yeastName}): ${val2_yeast} ${val2_yeast_hint}
 • Sol: ${val2_salt}
 
-⏳ Zamesi 10–12 min do gladkega in elastičnega testa.
-⏳ 1–2h vzhajanje v kosu pokrito na sobni temp.
-⏳ Oblikuj ${itemLabel} in pusti vzhajati:
-   - Hitro pečenje: 4–6h na sobni temp.
-   - Hladna fermentacija: 24h v hladilniku + 2–3h temperiranje pred peko.`;
+⏳ Zamesi, opravi Stretch & Fold serije ter oblikuj hlebčke za vzhajanje.`;
 
             } else if (currentTab === 'biga') {
                 const val1_1 = document.getElementById('val1_1').innerText;
@@ -816,16 +884,14 @@ SESTAVINE:
 1. BIGA (Suho predtesto):
 • Moka v Bigi: ${val1_1}
 • Hladna voda: ${val1_2}
-• Kvas v Bigi (${yeastName}): ${val1_3} ${val1_3_hint}
-Na hitro zmešaj le do navlažitve moke (ostati mora groba in suha, ne gneti!).
-⏳ 16–18h pokrito pri ~18 °C.
+• Kvas (${yeastName}): ${val1_3} ${val1_3_hint}
+⏳ 16–18h pri ~18 °C.
 
 2. GLAVNO TESTO:
 • Preostala moka: ${val2_1}
 • Preostala voda: ${val2_2}
 • Sol: ${val2_salt}
-Nadrobi bigo, dodaj moko in vodo ter vgneti sol do prožnosti.
-⏳ Odmor 30–45 min, oblikuj ${itemLabel}, vzhajaj 2,5–3h na sobni temp pred peko.`;
+⏳ Zamesi z dodatkom preostanka vode in soli. Vzhajaj 2,5–3h pred peko.`;
 
             } else if (currentTab === 'sourdough') {
                 const val1_1 = document.getElementById('val1_1').innerText;
@@ -847,10 +913,9 @@ Nadrobi bigo, dodaj moko in vodo ter vgneti sol do prožnosti.
 • Dodana voda: ${val2_2}
 • Sol: ${val2_salt}
 
-⏳ Autoliza moke in vode 45 min, vgneti aktivne droži ter sol.
-⏳ 3–4 serije nategovanja in prepogibanja (Stretch & Fold) na 30 min.
-⏳ Oblikuj ${itemLabel}, zapri v posodo in postavi v hladilnik za 24–36 ur.
-⏳ Pusti 2h na sobni temp pred peko.`;
+⏳ Autoliza 45 min, dodaj droži in sol.
+⏳ 3–4 serije Stretch & Fold na 30 min.
+⏳ Hladna fermentacija 24–36 ur.`;
 
             } else if (currentTab === 'breadrolls') {
                 const val2_1 = document.getElementById('val2_1').innerText;
@@ -868,10 +933,7 @@ SESTAVINE:
 • Kvas (${yeastName}): ${val2_yeast} ${val2_yeast_hint}
 • Sol: ${val2_salt}
 
-⏳ Zamesi testo in oblikuj podolgovate štručke ali kruhke.
-⏳ Vzhajanje 2–3h na sobni temp pokrito v posodi.
-⏳ Peka na preostali toploti pica peči pri ~300–320 °C do zlato-rumene barve.
-⏳ Prereži po dolžini, napolni z mocarelo, pršutom in rukolo!`;
+⏳ Zamesi testo, oblikuj štručke in peci na toploti pica peči po peki pic!`;
             }
 
             navigator.clipboard.writeText(recipeText).then(() => {
@@ -889,7 +951,9 @@ SESTAVINE:
             }, 2500);
         }
 
+        // Zagon ob nalaganju strani
         (function() {
+            loadParamsFromStorage();
             calculate();
         })();
     </script>
