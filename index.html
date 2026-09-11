@@ -3,62 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pica Poolish Kalkulator</title>
+    <title>Pizza testo kalkulator</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     
     <!-- PWA & Mobile Optimization -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Poolish Kalkulator">
+    <meta name="apple-mobile-web-app-title" content="Pica Kalkulator">
     <meta name="theme-color" content="#090d16">
     
     <!-- iOS Apple Touch Icon -->
-    <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='112' fill='%230f172a'/%3E%3Cpath d='M256 90 L420 390 C430 405 415 420 400 410 L256 330 L112 410 C97 420 82 405 92 390 Z' fill='%23d97706'/%3E%3Cpath d='M256 120 L380 360 C388 372 376 384 364 378 L256 310 L148 378 C136 384 124 372 132 360 Z' fill='%23f5b023'/%3E%3Ccircle cx='230' cy='240' r='18' fill='%23dc2626'/%3E%3Ccircle cx='290' cy='290' r='16' fill='%23dc2626'/%3E%3Ccircle cx='210' cy='330' r='14' fill='%23dc2626'/%3E%3C/svg%3E">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='120' fill='%230f172a'/%3E%3Cpath d='M110 160 Q256 100 402 160 C405 185 390 200 375 200 Q256 150 137 200 C122 200 107 185 110 160 Z' fill='%23d97706'/%3E%3Cpath d='M125 175 Q256 122 387 175 C380 188 370 192 360 190 Q256 148 152 190 C142 192 132 188 125 175 Z' fill='%23f59e0b'/%3E%3Cpath d='M137 200 Q256 150 375 200 L268 440 C262 452 250 452 244 440 Z' fill='%23fbbf24'/%3E%3Cpath d='M145 208 Q256 162 367 208 L262 422 C259 428 253 428 250 422 Z' fill='%23fef08a'/%3E%3Ccircle cx='210' cy='250' r='28' fill='%23dc2626'/%3E%3Ccircle cx='205' cy='245' r='24' fill='%23b91c1c'/%3E%3Ccircle cx='295' cy='280' r='26' fill='%23dc2626'/%3E%3Ccircle cx='290' cy='275' r='22' fill='%23b91c1c'/%3E%3Ccircle cx='235' cy='345' r='22' fill='%23dc2626'/%3E%3Ccircle cx='231' cy='341' r='18' fill='%23b91c1c'/%3E%3Cpath d='M275 220 C270 210 290 200 295 212 C290 220 280 225 275 220 Z' fill='%2316a34a'/%3E%3Cpath d='M180 300 C175 290 195 280 200 292 C195 300 185 305 180 300 Z' fill='%2316a34a'/%3E%3C/svg%3E">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='112' fill='%230f172a'/%3E%3Cpath d='M256 90 L420 390 C430 405 415 420 400 410 L256 330 L112 410 C97 420 82 405 92 390 Z' fill='%23d97706'/%3E%3Cpath d='M256 120 L380 360 C388 372 376 384 364 378 L256 310 L148 378 C136 384 124 372 132 360 Z' fill='%23f5b023'/%3E%3Ccircle cx='230' cy='240' r='18' fill='%23dc2626'/%3E%3Ccircle cx='290' cy='290' r='16' fill='%23dc2626'/%3E%3Ccircle cx='210' cy='330' r='14' fill='%23dc2626'/%3E%3C/svg%3E">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='120' fill='%230f172a'/%3E%3Cpath d='M110 160 Q256 100 402 160 C405 185 390 200 375 200 Q256 150 137 200 C122 200 107 185 110 160 Z' fill='%23d97706'/%3E%3Cpath d='M125 175 Q256 122 387 175 C380 188 370 192 360 190 Q256 148 152 190 C142 192 132 188 125 175 Z' fill='%23f59e0b'/%3E%3Cpath d='M137 200 Q256 150 375 200 L268 440 C262 452 250 452 244 440 Z' fill='%23fbbf24'/%3E%3Cpath d='M145 208 Q256 162 367 208 L262 422 C259 428 253 428 250 422 Z' fill='%23fef08a'/%3E%3Ccircle cx='210' cy='250' r='28' fill='%23dc2626'/%3E%3Ccircle cx='205' cy='245' r='24' fill='%23b91c1c'/%3E%3Ccircle cx='295' cy='280' r='26' fill='%23dc2626'/%3E%3Ccircle cx='290' cy='275' r='22' fill='%23b91c1c'/%3E%3Ccircle cx='235' cy='345' r='22' fill='%23dc2626'/%3E%3Ccircle cx='231' cy='341' r='18' fill='%23b91c1c'/%3E%3Cpath d='M275 220 C270 210 290 200 295 212 C290 220 280 225 275 220 Z' fill='%2316a34a'/%3E%3Cpath d='M180 300 C175 290 195 280 200 292 C195 300 185 305 180 300 Z' fill='%2316a34a'/%3E%3C/svg%3E">
     
     <!-- PWA Manifest -->
-    <link rel="manifest" href="data:application/manifest+json;utf8,%7B%22name%22%3A%22Pica%20Poolish%20Kalkulator%22%2C%22short_name%22%3A%22Poolish%22%2C%22start_url%22%3A%22.%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22%23090d16%22%2C%22theme_color%22%3A%22%23090d16%22%2C%22icons%22%3A%5B%7B%22src%22%3A%22data%3Aimage%2Fsvg%2Bxml%3Butf8%2C%253Csvg%2520xmlns%253D%27http%253A%252F%252Fwww.w3.org%252F2000%252Fsvg%27%2520viewBox%253D%270%25200%2520512%2520512%27%253E%253Crect%2520width%253D%27512%27%2520height%253D%27512%27%2520rx%253D%27112%27%2520fill%253D%27%25230f172a%27%252F%253E%253Cpath%2520d%253D%27M256%252090%2520L420%2520390%2520C430%2520405%2520415%2520420%2520400%2520410%2520L256%2520330%2520L112%2520410%2520C97%2520420%252082%2520405%252092%2520390%2520Z%27%2520fill%253D%27%2523d97706%27%252F%253E%253Cpath%2520d%253D%27M256%2520120%2520L380%2520360%2520C388%2520372%2520376%2520384%2520364%2520378%2520L256%2520310%2520L148%2520378%2520C136%2520384%2520124%2520372%2520132%2520360%2520Z%27%2520fill%253D%27%2523f5b023%27%252F%253E%253Ccircle%2520cx%253D%27230%27%2520cy%253D%27240%27%2520r%253D%2718%27%2520fill%253D%27%2523dc2626%27%252F%253E%253Ccircle%2520cx%253D%27290%27%2520cy%253D%27290%27%2520r%253D%2716%27%2520fill%253D%27%2523dc2626%27%252F%253E%253Ccircle%2520cx%253D%27210%27%2520cy%253D%27330%27%2520r%253D%2714%27%2520fill%253D%27%2523dc2626%27%252F%253E%253C%252Fsvg%253E%22%2C%22sizes%22%3A%22512x512%22%2C%22type%22%3A%22image%2Fsvg+xml%22%7D%5D%7D">
+    <link rel="manifest" href="data:application/manifest+json;utf8,%7B%22name%22%3A%22Pica%20Kalkulator%22%2C%22short_name%22%3A%22Pica%22%2C%22start_url%22%3A%22.%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22%23090d16%22%2C%22theme_color%22%3A%22%23090d16%22%2C%22icons%22%3A%5B%7B%22src%22%3A%22data%3Aimage%2Fsvg%2Bxml%3Butf8%2C%253Csvg%2520xmlns%253D%27http%253A%252F%252Fwww.w3.org%252F2000%252Fsvg%27%2520viewBox%253D%270%25200%2520512%2520512%27%253E%253Crect%2520width%253D%27512%27%2520height%253D%27512%27%2520rx%253D%27120%27%2520fill%253D%27%25230f172a%27%252F%253E%253Cpath%2520d%253D%27M110%2520160%2520Q256%2520100%2520402%2520160%2520C405%2520185%2520390%2520200%2520375%2520200%2520Q256%2520150%2520137%2520200%2520C122%2520200%2520107%2520185%2520110%2520160%2520Z%27%2520fill%253D%27%2523d97706%27%252F%253E%253Cpath%2520d%253D%27M125%2520175%2520Q256%2520122%2520387%2520175%2520C380%2520188%2520370%2520192%2520360%2520190%2520Q256%2520148%2520152%2520190%2520C142%2520192%2520132%2520188%2520125%2520175%2520Z%27%2520fill%253D%27%2523f59e0b%27%252F%253E%253Cpath%2520d%253D%27M137%2520200%2520Q256%2520150%2520375%2520200%2520L268%2520440%2520C262%2520452%2520250%2520452%2520244%2520440%2520Z%27%2520fill%253D%27%2523fbbf24%27%252F%253E%253Cpath%2520d%253D%27M145%2520208%2520Q256%2520162%2520367%2520208%2520L262%2520422%2520C259%2520428%2520253%2520428%2520250%2520422%2520Z%27%2520fill%253D%27%2523fef08a%27%252F%253E%253Ccircle%2520cx%253D%27210%27%2520cy%253D%27250%27%2520r%253D%2728%27%2520fill%253D%27%2523dc2626%27%252F%253E%253Ccircle%2520cx%253D%27205%27%2520cy%253D%27245%27%2520r%253D%2724%27%2520fill%253D%27%2523b91c1c%27%252F%253E%253Ccircle%2520cx%253D%27295%27%2520cy%253D%27280%27%2520r%253D%2726%27%2520fill%253D%27%2523dc2626%27%252F%253E%253Ccircle%2520cx%253D%27290%27%2520cy%253D%27275%27%2520r%253D%2722%27%2520fill%253D%27%2523b91c1c%27%252F%253E%253Ccircle%2520cx%253D%27235%27%2520cy%253D%27345%27%2520r%253D%2722%27%2520fill%253D%27%2523dc2626%27%252F%253E%253Ccircle%2520cx%253D%27231%27%2520cy%253D%27341%27%2520r%253D%2718%27%2520fill%253D%27%2523b91c1c%27%252F%253E%253Cpath%2520d%253D%27M275%2520220%2520C270%2520210%2520290%2520200%2520295%2520212%2520C290%2520220%2520280%2520225%2520275%2520220%2520Z%27%2520fill%253D%27%252316a34a%27%252F%253E%253Cpath%2520d%253D%27M180%2520300%2520C175%2520290%2520195%2520280%2520200%2520292%2520C195%2520300%2520185%2520305%2520180%2520300%2520Z%27%2520fill%253D%27%252316a34a%27%252F%253E%253C%252Fsvg%253E%22%2C%22sizes%22%3A%22512x512%22%2C%22type%22%3A%22image%2Fsvg+xml%22%7D%5D%7D">
 
     <style>
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #090d16;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #1e293b;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #334155;
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #090d16; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #334155; }
+        .tab-btn.active {
+            background-color: rgba(245, 158, 11, 0.15);
+            border-color: rgba(245, 158, 11, 0.5);
+            color: #fbbf24;
         }
     </style>
 </head>
 <body class="bg-[#090d16] text-slate-100 min-h-screen font-sans pb-12 antialiased">
 
+    <!-- Header -->
     <header class="border-b border-amber-500/20 bg-[#0c101d]/90 backdrop-blur sticky top-0 z-50">
-        <div class="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
+        <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
             <div class="flex items-center space-x-3">
                 <div class="p-2 bg-amber-500/10 text-amber-400 rounded-xl border border-amber-500/30 shadow-lg shadow-amber-500/5">
                     <i data-lucide="pizza" class="w-7 h-7"></i>
                 </div>
                 <div>
                     <h1 class="text-xl font-bold bg-gradient-to-r from-amber-200 via-amber-400 to-yellow-500 bg-clip-text text-transparent">
-                        Pizza Poolish
+                        Pizza testo kalkulator
                     </h1>
-                    <p class="text-xs text-slate-400">Kalkulator za testo in fermentacijo</p>
+                    <p class="text-xs text-slate-400">Recepture za testo in pica kruhke</p>
                 </div>
             </div>
+
+            <!-- Gumb za Namestitev na Telefon -->
+            <button id="installBtn" onclick="installApp()" class="flex items-center gap-2 bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 border border-amber-500/30 text-xs font-semibold py-2 px-3.5 rounded-xl transition shadow">
+                <i data-lucide="download" class="w-4 h-4"></i>
+                <span class="hidden sm:inline">Namesti aplikacijo</span>
+                <span class="sm:hidden">Namesti</span>
+            </button>
+        </div>
+
+        <!-- Zavihki / Tabs Nav -->
+        <div class="max-w-5xl mx-auto px-4 flex gap-2 overflow-x-auto py-2 border-t border-slate-800/60 no-scrollbar">
+            <button onclick="switchTab('poolish')" id="tab-poolish" class="tab-btn active px-3.5 py-1.5 rounded-xl border border-transparent text-xs font-semibold whitespace-nowrap flex items-center gap-1.5 text-slate-400 hover:text-slate-200 transition">
+                <span>🍕</span> Poolish
+            </button>
+            <button onclick="switchTab('direct')" id="tab-direct" class="tab-btn px-3.5 py-1.5 rounded-xl border border-transparent text-xs font-semibold whitespace-nowrap flex items-center gap-1.5 text-slate-400 hover:text-slate-200 transition">
+                <span>⚡</span> Direktno testo
+            </button>
+            <button onclick="switchTab('biga')" id="tab-biga" class="tab-btn px-3.5 py-1.5 rounded-xl border border-transparent text-xs font-semibold whitespace-nowrap flex items-center gap-1.5 text-slate-400 hover:text-slate-200 transition">
+                <span>🇮🇹</span> Biga
+            </button>
+            <button onclick="switchTab('sourdough')" id="tab-sourdough" class="tab-btn px-3.5 py-1.5 rounded-xl border border-transparent text-xs font-semibold whitespace-nowrap flex items-center gap-1.5 text-slate-400 hover:text-slate-200 transition">
+                <span>🌾</span> Droži (Sourdough)
+            </button>
+            <button onclick="switchTab('breadrolls')" id="tab-breadrolls" class="tab-btn px-3.5 py-1.5 rounded-xl border border-transparent text-xs font-semibold whitespace-nowrap flex items-center gap-1.5 text-slate-400 hover:text-slate-200 transition">
+                <span>🥖</span> Kruhki iz peči
+            </button>
         </div>
     </header>
 
-    <main class="max-w-5xl mx-auto px-4 mt-8">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+    <main class="max-w-5xl mx-auto px-4 mt-6">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
             
+            <!-- Nastavitve / Inputi -->
             <section class="lg:col-span-5 space-y-6">
                 <div class="bg-[#0e1422] border border-amber-500/20 rounded-2xl p-6 shadow-xl shadow-black/40">
                     <h2 class="text-lg font-semibold text-slate-100 mb-5 flex items-center gap-2">
@@ -69,14 +93,14 @@
                     <div class="space-y-4">
                         <div class="grid grid-cols-2 gap-4">
                             <div>
-                                <label class="block text-xs font-medium text-slate-400 mb-1">Število hlebčkov</label>
+                                <label id="labelNumItems" class="block text-xs font-medium text-slate-400 mb-1">Število hlebčkov</label>
                                 <div class="relative">
                                     <input type="number" id="numBalls" value="6" min="1" max="100" class="w-full bg-[#090d16] border border-slate-800 rounded-xl px-3 py-2.5 text-slate-100 font-semibold focus:outline-none focus:border-amber-500 transition">
                                     <span class="absolute right-3 top-2.5 text-xs text-slate-500">kos</span>
                                 </div>
                             </div>
                             <div>
-                                <label class="block text-xs font-medium text-slate-400 mb-1">Teža hlebčka</label>
+                                <label id="labelItemWeight" class="block text-xs font-medium text-slate-400 mb-1">Teža hlebčka</label>
                                 <div class="relative">
                                     <input type="number" id="ballWeight" value="250" min="50" max="1000" step="5" class="w-full bg-[#090d16] border border-slate-800 rounded-xl px-3 py-2.5 text-slate-100 font-semibold focus:outline-none focus:border-amber-500 transition">
                                     <span class="absolute right-3 top-2.5 text-xs text-slate-500">g</span>
@@ -84,15 +108,17 @@
                             </div>
                         </div>
 
+                        <!-- Hidracija Slider -->
                         <div>
                             <div class="flex justify-between items-center mb-1">
                                 <label class="text-xs font-medium text-slate-400">Hidracija <span class="text-[10px] text-slate-500">(prip. 65–70%)</span></label>
                                 <span id="hydrationValue" class="text-sm font-bold text-amber-400">65 %</span>
                             </div>
-                            <input type="range" id="hydration" min="55" max="85" value="65" step="1" class="w-full accent-amber-500 bg-[#090d16] h-2 rounded-lg cursor-pointer">
+                            <input type="range" id="hydration" min="50" max="85" value="65" step="1" class="w-full accent-amber-500 bg-[#090d16] h-2 rounded-lg cursor-pointer">
                         </div>
 
-                        <div>
+                        <!-- Poolish / Biga / Starter nastavitve -->
+                        <div id="poolishParamGroup">
                             <div class="flex justify-between items-center mb-1">
                                 <label class="text-xs font-medium text-slate-400">Moka v Poolishu <span class="text-[10px] text-slate-500">(prip. 20–30%)</span></label>
                                 <span id="poolishPctValue" class="text-sm font-bold text-yellow-400">30 %</span>
@@ -100,6 +126,23 @@
                             <input type="range" id="poolishPct" min="10" max="50" value="30" step="5" class="w-full accent-yellow-500 bg-[#090d16] h-2 rounded-lg cursor-pointer">
                         </div>
 
+                        <div id="bigaParamGroup" class="hidden">
+                            <div class="flex justify-between items-center mb-1">
+                                <label class="text-xs font-medium text-slate-400">Moka v Bigi <span class="text-[10px] text-slate-500">(prip. 50–70%)</span></label>
+                                <span id="bigaPctValue" class="text-sm font-bold text-yellow-400">60 %</span>
+                            </div>
+                            <input type="range" id="bigaPct" min="30" max="100" value="60" step="5" class="w-full accent-yellow-500 bg-[#090d16] h-2 rounded-lg cursor-pointer">
+                        </div>
+
+                        <div id="sourdoughParamGroup" class="hidden">
+                            <div class="flex justify-between items-center mb-1">
+                                <label class="text-xs font-medium text-slate-400">Delež droži (Starter) <span class="text-[10px] text-slate-500">(prip. 15–20%)</span></label>
+                                <span id="sourdoughPctValue" class="text-sm font-bold text-emerald-400">20 %</span>
+                            </div>
+                            <input type="range" id="sourdoughPct" min="5" max="30" value="20" step="1" class="w-full accent-emerald-500 bg-[#090d16] h-2 rounded-lg cursor-pointer">
+                        </div>
+
+                        <!-- Sol -->
                         <div>
                             <div class="flex justify-between items-center mb-1">
                                 <label class="block text-xs font-medium text-slate-400">Sol (%)</label>
@@ -111,7 +154,8 @@
                             </div>
                         </div>
 
-                        <div>
+                        <!-- Kvas selection -->
+                        <div id="yeastGroup">
                             <div class="flex justify-between items-center mb-1">
                                 <label class="block text-xs font-medium text-slate-400">Vrsta in količina kvasa</label>
                                 <span class="text-[10px] text-slate-500" id="yeastHint">suhi: 0.05–0.1 %</span>
@@ -134,8 +178,10 @@
                 </div>
             </section>
 
+            <!-- Rezultati in Postopek -->
             <section class="lg:col-span-7 space-y-6">
 
+                <!-- Skupne količine -->
                 <div class="bg-[#0e1422] border border-amber-500/20 rounded-2xl p-5 flex items-center justify-between shadow-xl shadow-black/40">
                     <div>
                         <p class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Skupna masa testa</p>
@@ -147,113 +193,95 @@
                     </div>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Dve kartici za sestavine -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="recipeCardsContainer">
                     
-                    <div class="bg-[#0e1422] border border-amber-500/30 rounded-2xl p-5 relative overflow-hidden shadow-xl">
+                    <!-- Kartica 1 (Predtesto / Poolish / Biga / Droži) -->
+                    <div id="cardPreferment" class="bg-[#0e1422] border border-amber-500/30 rounded-2xl p-5 relative overflow-hidden shadow-xl">
                         <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-500 to-yellow-500"></div>
                         <div class="flex items-center justify-between mb-4">
-                            <h3 class="font-bold text-amber-400 flex items-center gap-2">
+                            <h3 id="card1Title" class="font-bold text-amber-400 flex items-center gap-2">
                                 <i data-lucide="flask-conical" class="w-4 h-4"></i>
                                 1. POOLISH
                             </h3>
-                            <span class="text-[10px] font-semibold bg-amber-500/10 text-amber-300 border border-amber-500/20 px-2 py-0.5 rounded-full">
+                            <span id="card1Badge" class="text-[10px] font-semibold bg-amber-500/10 text-amber-300 border border-amber-500/20 px-2 py-0.5 rounded-full">
                                 100% Hidracija
                             </span>
                         </div>
 
                         <ul class="space-y-2.5 text-sm">
                             <li class="flex justify-between items-center border-b border-slate-800/80 pb-1.5">
-                                <span class="text-slate-400">Moka:</span>
-                                <span id="poolishFlour" class="font-bold text-slate-100">270 g</span>
+                                <span id="card1Label1" class="text-slate-400">Moka:</span>
+                                <span id="val1_1" class="font-bold text-slate-100">270 g</span>
                             </li>
                             <li class="flex justify-between items-center border-b border-slate-800/80 pb-1.5">
-                                <span class="text-slate-400">Voda:</span>
-                                <span id="poolishWater" class="font-bold text-slate-100">270 g</span>
+                                <span id="card1Label2" class="text-slate-400">Voda:</span>
+                                <span id="val1_2" class="font-bold text-slate-100">270 g</span>
                             </li>
-                            <li class="flex justify-between items-center border-b border-slate-800/80 pb-1.5">
-                                <span class="text-slate-400">Kvas:</span>
+                            <li id="card1Row3" class="flex justify-between items-center border-b border-slate-800/80 pb-1.5">
+                                <span id="card1Label3" class="text-slate-400">Kvas:</span>
                                 <div class="text-right">
-                                    <span id="poolishYeast" class="font-bold text-amber-400">0.45 g</span>
-                                    <p id="poolishSpoons" class="text-[11px] text-slate-400">(~9,0 x 0,1ml žličke)</p>
+                                    <span id="val1_3" class="font-bold text-amber-400">0.45 g</span>
+                                    <p id="val1_3_hint" class="text-[11px] text-slate-400">(~9,0 x 0,1ml žličke)</p>
                                 </div>
                             </li>
                         </ul>
                     </div>
 
-                    <div class="bg-[#0e1422] border border-amber-600/30 rounded-2xl p-5 relative overflow-hidden shadow-xl">
+                    <!-- Kartica 2 (Glavno testo / Direktno testo / Kruhki) -->
+                    <div id="cardMainDough" class="bg-[#0e1422] border border-amber-600/30 rounded-2xl p-5 relative overflow-hidden shadow-xl">
                         <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-yellow-500 to-amber-600"></div>
                         <div class="flex items-center justify-between mb-4">
-                            <h3 class="font-bold text-yellow-400 flex items-center gap-2">
+                            <h3 id="card2Title" class="font-bold text-yellow-400 flex items-center gap-2">
                                 <i data-lucide="chef-hat" class="w-4 h-4"></i>
                                 2. GLAVNO TESTO
                             </h3>
-                            <span class="text-[10px] font-semibold bg-yellow-500/10 text-yellow-300 border border-yellow-500/20 px-2 py-0.5 rounded-full">
+                            <span id="card2Badge" class="text-[10px] font-semibold bg-yellow-500/10 text-yellow-300 border border-yellow-500/20 px-2 py-0.5 rounded-full">
                                 Zames
                             </span>
                         </div>
 
                         <ul class="space-y-2.5 text-sm">
                             <li class="flex justify-between items-center border-b border-slate-800/80 pb-1.5">
-                                <span class="text-slate-400">Preostala moka:</span>
-                                <span id="mainFlour" class="font-bold text-slate-100">630 g</span>
+                                <span id="card2Label1" class="text-slate-400">Preostala moka:</span>
+                                <span id="val2_1" class="font-bold text-slate-100">630 g</span>
                             </li>
                             <li class="flex justify-between items-center border-b border-slate-800/80 pb-1.5">
-                                <span class="text-slate-400">Preostala voda:</span>
-                                <span id="mainWater" class="font-bold text-slate-100">315 g</span>
+                                <span id="card2Label2" class="text-slate-400">Preostala voda:</span>
+                                <span id="val2_2" class="font-bold text-slate-100">315 g</span>
+                            </li>
+                            <li id="card2RowYeast" class="hidden flex justify-between items-center border-b border-slate-800/80 pb-1.5">
+                                <span id="card2LabelYeast" class="text-slate-400">Kvas:</span>
+                                <div class="text-right">
+                                    <span id="val2_yeast" class="font-bold text-amber-400">0.45 g</span>
+                                    <p id="val2_yeast_hint" class="text-[11px] text-slate-400">(~9,0 x 0,1ml žličke)</p>
+                                </div>
                             </li>
                             <li class="flex justify-between items-center border-b border-slate-800/80 pb-1.5">
-                                <span class="text-slate-400">Sol:</span>
-                                <span id="mainSalt" class="font-bold text-slate-100">25.2 g</span>
+                                <span id="card2LabelSalt" class="text-slate-400">Sol:</span>
+                                <span id="val2_salt" class="font-bold text-slate-100">25.2 g</span>
                             </li>
                         </ul>
                     </div>
 
                 </div>
 
+                <!-- Časovni vodič in Navodila -->
                 <div class="bg-[#0e1422] border border-amber-500/20 rounded-2xl p-5 shadow-lg">
                     <h3 class="font-bold text-slate-200 mb-3 flex items-center gap-2 text-sm">
                         <i data-lucide="timer" class="w-4 h-4 text-amber-400"></i>
-                        Časovni vodič & Postopek Fermentacije
+                        <span id="instructionsTitle">Časovni vodič & Postopek Fermentacije</span>
                     </h3>
 
-                    <div class="space-y-3 text-xs text-slate-300">
-                        <div class="flex gap-3 items-start">
-                            <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">1</div>
-                            <div>
-                                <p class="font-semibold text-slate-100">Priprava Poolisha</p>
-                                <p class="text-slate-400">V posodo daj vodo sobne temperature in kvas ter dobro premešaj, da se kvas povsem raztopi. Dodaj moko in mešaj z žlico ali metlico, dokler zmes ni popolnoma gladka, brez grudic (konsistenca gostejše palačinčne zmesi). Posodo tesno pokrij s folijo ali pokrovom, da poolish na vrhu ne izsuši, in pusti 1–2 uri na sobni temperaturi. Nato pokrito posodo prestavi v hladilnik za 16–24 ur, da poolish lepo zraste, postane penast in poln mehurčkov.</p>
-                            </div>
-                        </div>
-
-                        <div class="flex gap-3 items-start">
-                            <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">2</div>
-                            <div>
-                                <p class="font-semibold text-slate-100">Zames glavnega testa</p>
-                                <p class="text-slate-400">K zrelemu poolishu (poln mehurčkov, rahlo kisel vonj je normalen) dodaj preostalo moko in večji del preostale vode. Gneti približno 8–10 minut, nato postopoma dodajaj sol in preostanek vode, dokler testo ni gladko in elastično ter se ne lepi na roke (t. i. windowpane test – košček testa se da razpotegniti v tanko, skoraj prosojno folijo, ne da bi se strgal).</p>
-                            </div>
-                        </div>
-
-                        <div class="flex gap-3 items-start">
-                            <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">3</div>
-                            <div>
-                                <p class="font-semibold text-slate-100">Oblikovanje in hladna fermentacija</p>
-                                <p class="text-slate-400">Testo pokrito pusti počivati 1 uro na sobni temperaturi, nato ga razdeli in oblikuj v <span id="stepBallsCount">6</span> kroglic po <span id="stepBallWeight">250g</span>. Vsako kroglico daj v dovolj veliko posodo (testo se poveča za cca. 1,5×) in jo tesno pokrij s pokrovom ali folijo, da se ne posuši. Postavi v hladilnik za 24–48 ur.</p>
-                            </div>
-                        </div>
-
-                        <div class="flex gap-3 items-start">
-                            <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">4</div>
-                            <div>
-                                <p class="font-semibold text-slate-100">Temperiranje pred peko</p>
-                                <p class="text-slate-400">Pred peko vzemi kroglice iz hladilnika, jih pokrite pusti 2–3 ure na sobni temperaturi, da se ogrejejo in lažje raztegnejo. Pekač oz. kamen za peko naj se medtem dobro segreje na najvišjo temperaturo pečice.</p>
-                            </div>
-                        </div>
+                    <div id="instructionsContent" class="space-y-3 text-xs text-slate-300">
+                        <!-- Dinamično vstavljena navodila -->
                     </div>
                 </div>
 
+                <!-- Gumb za Kopiranje -->
                 <button onclick="copyRecipe()" class="w-full bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-600 hover:to-yellow-600 text-slate-950 font-bold py-3.5 px-6 rounded-xl shadow-lg shadow-amber-500/10 transition flex items-center justify-center gap-2 group">
                     <i data-lucide="copy" class="w-5 h-5 group-hover:scale-110 transition-transform"></i>
-                    Kopiraj recept v odlagališče (za telefon)
+                    Kopiraj recept v odlagališče
                 </button>
 
             </section>
@@ -261,15 +289,35 @@
         </div>
     </main>
 
+    <!-- Toast Obvestilo -->
     <div id="toast" class="fixed bottom-6 right-6 bg-[#0e1422] text-slate-100 border border-amber-500/30 px-4 py-3 rounded-xl shadow-2xl flex items-center gap-3 translate-y-20 opacity-0 transition-all duration-300 pointer-events-none z-50">
         <i data-lucide="check-circle" class="w-5 h-5 text-amber-400"></i>
         <span class="text-sm font-medium">Recept uspešno kopiran!</span>
     </div>
 
     <script>
+        let currentTab = 'poolish';
         let currentYeastType = 'dry';
-        const inputs = ['numBalls', 'ballWeight', 'hydration', 'saltPct', 'yeastPct', 'poolishPct'];
-        
+        let deferredPrompt;
+
+        const inputs = ['numBalls', 'ballWeight', 'hydration', 'saltPct', 'yeastPct', 'poolishPct', 'bigaPct', 'sourdoughPct'];
+
+        function round5(num) {
+            return Math.round(num / 5) * 5;
+        }
+
+        function getYeastSpoonsText(yeastGrams, yeastType) {
+            if (yeastType === 'dry') {
+                // Suhi kvas ~0,05 g na 0,1ml žličko
+                const spoons = (yeastGrams / 0.05).toFixed(1).replace('.', ',');
+                return `(~${spoons} x 0,1ml žličke)`;
+            } else {
+                // Sveži kvas ~3 g na čajno žličko (5ml)
+                const tsp = (yeastGrams / 3).toFixed(1).replace('.', ',');
+                return `(~${tsp} čajne žličke)`;
+            }
+        }
+
         lucide.createIcons();
 
         inputs.forEach(id => {
@@ -279,6 +327,51 @@
                 el.addEventListener('change', calculate);
             }
         });
+
+        // PWA Install Prompt Logic
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            const btn = document.getElementById('installBtn');
+            if(btn) btn.classList.remove('hidden');
+        });
+
+        function installApp() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    if (choiceResult.outcome === 'accepted') {
+                        console.log('Aplikacija je bila nameščena.');
+                    }
+                    deferredPrompt = null;
+                });
+            } else {
+                alert("Za namestitev aplikacije na telefon:\n\n• iOS (Safari): Pritisni ikono za deljenje 'Deli' (kvadrat s puščico) in izberi 'Dodaj na domači zaslon'.\n\n• Android (Chrome): Klikni na 3 pikice zgoraj desno in izberi 'Namesti aplikacijo' ali 'Dodaj na začetni zaslon'.");
+            }
+        }
+
+        function switchTab(tab) {
+            currentTab = tab;
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(`tab-${tab}`).classList.add('active');
+
+            // Prikaz pravih vhodnih parametrov
+            document.getElementById('poolishParamGroup').classList.toggle('hidden', tab !== 'poolish');
+            document.getElementById('bigaParamGroup').classList.toggle('hidden', tab !== 'biga');
+            document.getElementById('sourdoughParamGroup').classList.toggle('hidden', tab !== 'sourdough');
+            document.getElementById('yeastGroup').classList.toggle('hidden', tab === 'sourdough');
+
+            // Prilagoditev oznak za kruhke
+            if (tab === 'breadrolls') {
+                document.getElementById('labelNumItems').innerText = 'Število kruhkov';
+                document.getElementById('labelItemWeight').innerText = 'Teža kruhka';
+            } else {
+                document.getElementById('labelNumItems').innerText = 'Število hlebčkov';
+                document.getElementById('labelItemWeight').innerText = 'Teža hlebčka';
+            }
+
+            calculate();
+        }
 
         function setYeastType(type) {
             currentYeastType = type;
@@ -307,86 +400,479 @@
             const hydration = parseFloat(document.getElementById('hydration').value) || 0;
             const saltPct = parseFloat(document.getElementById('saltPct').value) || 0;
             const yeastPct = parseFloat(document.getElementById('yeastPct').value) || 0;
-            const poolishPct = parseFloat(document.getElementById('poolishPct').value) || 0;
-
+            
             document.getElementById('hydrationValue').innerText = `${hydration} %`;
-            document.getElementById('poolishPctValue').innerText = `${poolishPct} %`;
 
             const totalWeight = numBalls * ballWeight;
-            const totalPct = 100 + hydration + saltPct + yeastPct;
+            const totalPct = 100 + hydration + saltPct + (currentTab !== 'sourdough' ? yeastPct : 0);
 
-            const totalFlour = totalWeight / (totalPct / 100);
-            const totalWater = totalFlour * (hydration / 100);
-            const totalSalt = totalFlour * (saltPct / 100);
-            const totalYeast = totalFlour * (yeastPct / 100);
-
-            const poolishFlour = totalFlour * (poolishPct / 100);
-            const poolishWater = poolishFlour;
-            const poolishYeast = totalYeast;
-
-            const mainFlour = totalFlour - poolishFlour;
-            const mainWater = totalWater - poolishWater;
-            const mainSalt = totalSalt;
+            const rawTotalFlour = totalWeight / (totalPct / 100);
+            const totalFlour = round5(rawTotalFlour);
+            const totalWater = round5(totalFlour * (hydration / 100));
+            const totalSalt = (totalFlour * (saltPct / 100)).toFixed(1);
+            const totalYeast = (totalFlour * (yeastPct / 100));
 
             document.getElementById('totalWeightDisplay').innerHTML = `${Math.round(totalWeight)} <span class="text-base font-normal text-slate-400">g</span>`;
-            document.getElementById('totalFlourDisplay').innerText = `${Math.round(totalFlour)}g`;
-            document.getElementById('totalWaterDisplay').innerText = `${Math.round(totalWater)}g`;
+            document.getElementById('totalFlourDisplay').innerText = `${totalFlour}g`;
+            document.getElementById('totalWaterDisplay').innerText = `${totalWater}g`;
 
-            document.getElementById('poolishFlour').innerText = `${Math.round(poolishFlour)} g`;
-            document.getElementById('poolishWater').innerText = `${Math.round(poolishWater)} g`;
-            document.getElementById('poolishYeast').innerText = `${totalYeast < 10 ? totalYeast.toFixed(2) : Math.round(totalYeast)} g`;
-            
-            const poolishSpoonsEl = document.getElementById('poolishSpoons');
-            if (currentYeastType === 'dry') {
-                // gostota suhega kvasa ~0,5 g/ml → 0,1 ml žlička ≈ 0,05 g
-                const spoons01ml = (totalYeast / 0.05).toFixed(1);
-                poolishSpoonsEl.innerText = `(~${spoons01ml} x 0,1ml žličke)`;
-            } else {
-                // sveži kvas ~3 g na čajno žličko (5ml, rahlo nadrobljen)
-                const tspFresh = (totalYeast / 3).toFixed(1);
-                poolishSpoonsEl.innerText = `(~${tspFresh} čajne žličke)`;
+            const cardPre = document.getElementById('cardPreferment');
+            const card1Title = document.getElementById('card1Title');
+            const card1Badge = document.getElementById('card1Badge');
+            const card2Title = document.getElementById('card2Title');
+            const card2Badge = document.getElementById('card2Badge');
+
+            const card2RowYeast = document.getElementById('card2RowYeast');
+
+            if (currentTab === 'poolish') {
+                const poolishPct = parseFloat(document.getElementById('poolishPct').value) || 30;
+                document.getElementById('poolishPctValue').innerText = `${poolishPct} %`;
+
+                const poolishFlour = round5(totalFlour * (poolishPct / 100));
+                const poolishWater = poolishFlour;
+                const mainFlour = round5(totalFlour - poolishFlour);
+                const mainWater = round5(totalWater - poolishWater);
+
+                cardPre.style.display = 'block';
+                card1Title.innerHTML = `<i data-lucide="flask-conical" class="w-4 h-4"></i> 1. POOLISH`;
+                card1Badge.innerText = '100% Hidracija';
+
+                document.getElementById('card1Label1').innerText = 'Moka:';
+                document.getElementById('val1_1').innerText = `${poolishFlour} g`;
+                document.getElementById('card1Label2').innerText = 'Voda:';
+                document.getElementById('val1_2').innerText = `${poolishWater} g`;
+                
+                document.getElementById('card1Row3').style.display = 'flex';
+                document.getElementById('card1Label3').innerText = 'Kvas:';
+                document.getElementById('val1_3').innerText = `${totalYeast < 10 ? totalYeast.toFixed(2) : Math.round(totalYeast)} g`;
+                document.getElementById('val1_3_hint').innerText = getYeastSpoonsText(totalYeast, currentYeastType);
+
+                card2Title.innerHTML = `<i data-lucide="chef-hat" class="w-4 h-4"></i> 2. GLAVNO TESTO`;
+                card2Badge.innerText = 'Zames';
+                document.getElementById('card2Label1').innerText = 'Preostala moka:';
+                document.getElementById('val2_1').innerText = `${mainFlour} g`;
+                document.getElementById('card2Label2').innerText = 'Preostala voda:';
+                document.getElementById('val2_2').innerText = `${mainWater} g`;
+                
+                card2RowYeast.style.display = 'none';
+                document.getElementById('card2LabelSalt').innerText = 'Sol:';
+                document.getElementById('val2_salt').innerText = `${totalSalt} g`;
+
+                renderInstructions('poolish', numBalls, ballWeight);
+
+            } else if (currentTab === 'direct') {
+                cardPre.style.display = 'none';
+
+                card2Title.innerHTML = `<i data-lucide="chef-hat" class="w-4 h-4"></i> DIREKTNO TESTO`;
+                card2Badge.innerText = 'Enostaven zames';
+                document.getElementById('card2Label1').innerText = 'Moka:';
+                document.getElementById('val2_1').innerText = `${totalFlour} g`;
+                document.getElementById('card2Label2').innerText = 'Voda:';
+                document.getElementById('val2_2').innerText = `${totalWater} g`;
+                
+                card2RowYeast.style.display = 'flex';
+                document.getElementById('card2LabelYeast').innerText = 'Kvas:';
+                document.getElementById('val2_yeast').innerText = `${totalYeast < 10 ? totalYeast.toFixed(2) : Math.round(totalYeast)} g`;
+                document.getElementById('val2_yeast_hint').innerText = getYeastSpoonsText(totalYeast, currentYeastType);
+
+                document.getElementById('card2LabelSalt').innerText = 'Sol:';
+                document.getElementById('val2_salt').innerText = `${totalSalt} g`;
+
+                renderInstructions('direct', numBalls, ballWeight);
+
+            } else if (currentTab === 'biga') {
+                const bigaPct = parseFloat(document.getElementById('bigaPct').value) || 60;
+                document.getElementById('bigaPctValue').innerText = `${bigaPct} %`;
+
+                const bigaFlour = round5(totalFlour * (bigaPct / 100));
+                const bigaWater = round5(bigaFlour * 0.45);
+                const bigaYeast = (bigaFlour * (currentYeastType === 'fresh' ? 0.01 : 0.0033));
+                
+                const mainFlour = round5(totalFlour - bigaFlour);
+                const mainWater = round5(totalWater - bigaWater);
+
+                cardPre.style.display = 'block';
+                card1Title.innerHTML = `<i data-lucide="boxes" class="w-4 h-4"></i> 1. BIGA`;
+                card1Badge.innerText = '45% Hidracija (Suho predtesto)';
+
+                document.getElementById('card1Label1').innerText = 'Moka v Bigi:';
+                document.getElementById('val1_1').innerText = `${bigaFlour} g`;
+                document.getElementById('card1Label2').innerText = 'Hladna voda:';
+                document.getElementById('val1_2').innerText = `${bigaWater} g`;
+                
+                document.getElementById('card1Row3').style.display = 'flex';
+                document.getElementById('card1Label3').innerText = 'Kvas v Bigi:';
+                document.getElementById('val1_3').innerText = `${bigaYeast.toFixed(2)} g`;
+                document.getElementById('val1_3_hint').innerText = getYeastSpoonsText(bigaYeast, currentYeastType);
+
+                card2Title.innerHTML = `<i data-lucide="chef-hat" class="w-4 h-4"></i> 2. GLAVNO TESTO`;
+                card2Badge.innerText = 'Zames';
+                document.getElementById('card2Label1').innerText = 'Preostala moka:';
+                document.getElementById('val2_1').innerText = `${mainFlour} g`;
+                document.getElementById('card2Label2').innerText = 'Preostala voda:';
+                document.getElementById('val2_2').innerText = `${mainWater} g`;
+                
+                card2RowYeast.style.display = 'none';
+                document.getElementById('card2LabelSalt').innerText = 'Sol:';
+                document.getElementById('val2_salt').innerText = `${totalSalt} g`;
+
+                renderInstructions('biga', numBalls, ballWeight);
+
+            } else if (currentTab === 'sourdough') {
+                const starterPct = parseFloat(document.getElementById('sourdoughPct').value) || 20;
+                document.getElementById('sourdoughPctValue').innerText = `${starterPct} %`;
+
+                const starterWeight = totalFlour * (starterPct / 100);
+                const starterFlour = round5(starterWeight / 2);
+                const starterWater = round5(starterWeight / 2);
+
+                const addedFlour = round5(totalFlour - starterFlour);
+                const addedWater = round5(totalWater - starterWater);
+
+                cardPre.style.display = 'block';
+                card1Title.innerHTML = `<i data-lucide="wheat" class="w-4 h-4"></i> 1. DROŽI (STARTER)`;
+                card1Badge.innerText = 'Aktivne droži (100% hidr.)';
+
+                document.getElementById('card1Label1').innerText = 'Matične droži:';
+                document.getElementById('val1_1').innerText = `${round5(starterWeight)} g`;
+                document.getElementById('card1Label2').innerText = '(Moka v drožeh):';
+                document.getElementById('val1_2').innerText = `~${starterFlour} g`;
+                
+                document.getElementById('card1Row3').style.display = 'flex';
+                document.getElementById('card1Label3').innerText = '(Voda v drožeh):';
+                document.getElementById('val1_3').innerText = `~${starterWater} g`;
+                document.getElementById('val1_3_hint').innerText = '';
+
+                card2Title.innerHTML = `<i data-lucide="chef-hat" class="w-4 h-4"></i> 2. ZAMES TESTA`;
+                card2Badge.innerText = 'Zames';
+                document.getElementById('card2Label1').innerText = 'Dodana moka:';
+                document.getElementById('val2_1').innerText = `${addedFlour} g`;
+                document.getElementById('card2Label2').innerText = 'Dodana voda:';
+                document.getElementById('val2_2').innerText = `${addedWater} g`;
+                
+                card2RowYeast.style.display = 'none';
+                document.getElementById('card2LabelSalt').innerText = 'Sol:';
+                document.getElementById('val2_salt').innerText = `${totalSalt} g`;
+
+                renderInstructions('sourdough', numBalls, ballWeight);
+
+            } else if (currentTab === 'breadrolls') {
+                cardPre.style.display = 'none';
+
+                card2Title.innerHTML = `<i data-lucide="flame" class="w-4 h-4"></i> PICA KRUHKI (PANUOZZO)`;
+                card2Badge.innerText = 'Peka v pica peči';
+                document.getElementById('card2Label1').innerText = 'Moka:';
+                document.getElementById('val2_1').innerText = `${totalFlour} g`;
+                document.getElementById('card2Label2').innerText = 'Voda:';
+                document.getElementById('val2_2').innerText = `${totalWater} g`;
+                
+                card2RowYeast.style.display = 'flex';
+                document.getElementById('card2LabelYeast').innerText = 'Kvas:';
+                document.getElementById('val2_yeast').innerText = `${totalYeast < 10 ? totalYeast.toFixed(2) : Math.round(totalYeast)} g`;
+                document.getElementById('val2_yeast_hint').innerText = getYeastSpoonsText(totalYeast, currentYeastType);
+
+                document.getElementById('card2LabelSalt').innerText = 'Sol:';
+                document.getElementById('val2_salt').innerText = `${totalSalt} g`;
+
+                renderInstructions('breadrolls', numBalls, ballWeight);
             }
-            poolishSpoonsEl.classList.remove('hidden');
 
-            document.getElementById('mainFlour').innerText = `${Math.round(mainFlour)} g`;
-            document.getElementById('mainWater').innerText = `${Math.round(mainWater)} g`;
-            document.getElementById('mainSalt').innerText = `${totalSalt.toFixed(1)} g`;
+            lucide.createIcons();
+        }
 
-            document.getElementById('stepBallsCount').innerText = numBalls;
-            document.getElementById('stepBallWeight').innerText = `${ballWeight}g`;
+        function renderInstructions(type, numBalls, ballWeight) {
+            const container = document.getElementById('instructionsContent');
+            
+            if (type === 'poolish') {
+                container.innerHTML = `
+                    <div class="flex gap-3 items-start">
+                        <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">1</div>
+                        <div>
+                            <p class="font-semibold text-slate-100">Priprava Poolisha</p>
+                            <p class="text-slate-400">V posodo daj vodo sobne temperature in kvas ter dobro premešaj, da se kvas povsem raztopi. Dodaj moko in mešaj z žlico ali metlico, dokler zmes ni popolnoma gladka, brez grudic (konsistenca gostejše palačinčne zmesi). Posodo tesno pokrij s folijo ali pokrovom, da se površina ne izsuši, ter pusti 1–2 uri na sobni temperaturi. Nato pokrito posodo prestavi v hladilnik za 16–24 ur, da poolish lepo zraste, postane penast in poln mehurčkov.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-3 items-start">
+                        <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">2</div>
+                        <div>
+                            <p class="font-semibold text-slate-100">Zames glavnega testa</p>
+                            <p class="text-slate-400">K zrelemu poolishu (poln mehurčkov, rahlo kisel vonj je normalen) dodaj preostalo moko in večji del preostale vode. Gneti približno 8–10 minut, nato postopoma dodajaj sol in preostanek vode, dokler testo ni gladko in elastično ter se ne lepi na roke (windowpane test – košček testa se da razpotegniti v tanko, prosojno folijo, ne da bi se strgal).</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-3 items-start">
+                        <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">3</div>
+                        <div>
+                            <p class="font-semibold text-slate-100">Oblikovanje in hladna fermentacija</p>
+                            <p class="text-slate-400">Testo pokrito pusti počivati 1 uro na sobni temperaturi, nato ga razdeli in oblikuj v <span class="font-semibold text-slate-200">${numBalls}</span> hlebčkov po <span class="font-semibold text-slate-200">${ballWeight}g</span>. Vsak hlebček daj v dovolj veliko posodo (testo se poveča za cca. 1,5×) in jo tesno pokrij s pokrovom ali folijo. Postavi v hladilnik za 24–48 ur.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-3 items-start">
+                        <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">4</div>
+                        <div>
+                            <p class="font-semibold text-slate-100">Temperiranje pred peko</p>
+                            <p class="text-slate-400">Pred peko vzemi hlebčke iz hladilnika, jih pokrite pusti 2–3 ure na sobni temperaturi, da se ogrejejo in lažje raztegnejo. Pica peč oz. kamen za peko naj se medtem dobro segreje na najvišjo temperaturo.</p>
+                        </div>
+                    </div>
+                `;
+            } else if (type === 'direct') {
+                container.innerHTML = `
+                    <div class="flex gap-3 items-start">
+                        <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">1</div>
+                        <div>
+                            <p class="font-semibold text-slate-100">Zames direktnega testa</p>
+                            <p class="text-slate-400">V posodi raztopi kvas v večjem delu hladne vode. Postopoma dodajaj moko in gneti z roko ali mešalnikom. Ko se sestavine povežejo, dodaj sol in preostanek vode. Gneti 10–12 minut, da dobiš popolnoma gladko, prožno in svilnato testo.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-3 items-start">
+                        <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">2</div>
+                        <div>
+                            <p class="font-semibold text-slate-100">Prvo vzhajanje (v kosu)</p>
+                            <p class="text-slate-400">Testo oblikuj v gladko kroglo, ga pokrij z vlažno krpo ali zaprto posodo ter pusti počivati na sobni temperaturi 1 do 2 uri, da se začne aktivno vzhajanje in sproščanje glutena.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-3 items-start">
+                        <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">3</div>
+                        <div>
+                            <p class="font-semibold text-slate-100">Oblikovanje hlebčkov in vzhajanje</p>
+                            <p class="text-slate-400">Razdeli testo na <span class="font-semibold text-slate-200">${numBalls}</span> hlebčkov po <span class="font-semibold text-slate-200">${ballWeight}g</span>. Vsak hlebček oblikuj v čvrsto kroglico in jih zloži v pomokano posodo za vzhajanje. Pokrij s pokrovom ali folijo.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-3 items-start">
+                        <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">4</div>
+                        <div>
+                            <p class="font-semibold text-slate-100">Zaključno vzhajanje in peka</p>
+                            <p class="text-slate-400">Za hitro peko pusti hlebčke vzhajati 4–6 ur na sobni temperaturi. Za maksimalen okus in lažjo prebavljivost pa posodo postavi v hladilnik za 24 ur (nato jih pred peko pusti 2–3 ure na sobni temperaturi, da se temperirajo).</p>
+                        </div>
+                    </div>
+                `;
+            } else if (type === 'biga') {
+                container.innerHTML = `
+                    <div class="flex gap-3 items-start">
+                        <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">1</div>
+                        <div>
+                            <p class="font-semibold text-slate-100">Priprava Bige (Suho predtesto)</p>
+                            <p class="text-slate-400">Kvas raztopi v mrzli vodi. V posodo daj moko, prelij z vodo in na hitro premešaj z roko ali vilicami (samo 1–2 minuti), da se vsa moka navlaži. Zmes mora ostati groba, suha in grudasta – ne smeš je pregneti v testo! Posodo pokrij in pusti fermentirati 16–18 ur na hladnejšem mestu (~18 °C).</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-3 items-start">
+                        <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">2</div>
+                        <div>
+                            <p class="font-semibold text-slate-100">Zames glavnega testa</p>
+                            <p class="text-slate-400">Zrelo bigo nadrobi na manjše koščke v posodo mešalnika. Dodaj preostalo moko in približno 80 % preostale mrzle vode. Gneti na nizki hitrosti. Ko se testo poveže in postane prožno, počasi postopoma prilivaj preostanek vode ter na koncu vgneti sol.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-3 items-start">
+                        <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">3</div>
+                        <div>
+                            <p class="font-semibold text-slate-100">Odmor in oblikovanje hlebčkov</p>
+                            <p class="text-slate-400">Pregneteno testo pokrij in pusti počivati v kosu 30–45 minut na sobni temperaturi. Nato ga razdeli na <span class="font-semibold text-slate-200">${numBalls}</span> hlebčkov po <span class="font-semibold text-slate-200">${ballWeight}g</span> in vsakega oblikuj v gladko kroglico.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-3 items-start">
+                        <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">4</div>
+                        <div>
+                            <p class="font-semibold text-slate-100">Zaključno vzhajanje</p>
+                            <p class="text-slate-400">Hlebčke pokrito pusti vzhajati na sobni temperaturi približno 2,5 do 3 ure, da lepo narastejo in postanejo mehki ter polni zraka, nato so pripravljeni za peko v vroči pica peči.</p>
+                        </div>
+                    </div>
+                `;
+            } else if (type === 'sourdough') {
+                container.innerHTML = `
+                    <div class="flex gap-3 items-start">
+                        <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">1</div>
+                        <div>
+                            <p class="font-semibold text-slate-100">Autoliza in zames z drožmi</p>
+                            <p class="text-slate-400">Moko in večino vode zmešaj v enotno maso brez suhe moke ter pusti počivati 45–60 minut (autoliza). Nato dodaj aktivne, na vrhuncu bujenja pripravljene droži in temeljito vgneti. Po 30 minutah dodaj sol in preostanek vode ter gneti, dokler testo ne postane gladko.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-3 items-start">
+                        <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">2</div>
+                        <div>
+                            <p class="font-semibold text-slate-100">Nategovanje in prepogibanje (Stretch & Fold)</p>
+                            <p class="text-slate-400">Testo pusti vzhajati na sobni temperaturi 3–4 ure. V prvih dveh urah vsakih 30 minut opravi serijo nategovanja in prepogibanja testa (skupaj 3–4 serije), da zgradiš močno glutensko mrežo.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-3 items-start">
+                        <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">3</div>
+                        <div>
+                            <p class="font-semibold text-slate-100">Oblikovanje in hladna fermentacija</p>
+                            <p class="text-slate-400">Ko se volumetrično testo poveča za cca. 50 %, ga razdeli na <span class="font-semibold text-slate-200">${numBalls}</span> hlebčkov po <span class="font-semibold text-slate-200">${ballWeight}g</span>. Oblikuj gladke kroglice, jih zapri v posodo in postavi v hladilnik na hladno fermentacijo za 24–36 ur.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-3 items-start">
+                        <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">4</div>
+                        <div>
+                            <p class="font-semibold text-slate-100">Temperiranje pred peko</p>
+                            <p class="text-slate-400">Pripravljene hlebčke vzemi iz hladilnika 2 uri pred peko, da dosežejo sobno temperaturo. Peci v močno segreti pica peči za značilen videz z mehurčki in hrustljavo skorjo.</p>
+                        </div>
+                    </div>
+                `;
+            } else if (type === 'breadrolls') {
+                container.innerHTML = `
+                    <div class="flex gap-3 items-start">
+                        <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">1</div>
+                        <div>
+                            <p class="font-semibold text-slate-100">Priprava testa za kruhke</p>
+                            <p class="text-slate-400">Testo zamesi po direktnem postopku (lahko pa uporabiš tudi preostale hlebčke pica testa!). Testo razdeli na <span class="font-semibold text-slate-200">${numBalls}</span> kosov po <span class="font-semibold text-slate-200">${ballWeight}g</span> ter jih oblikuj v podolgovate štručke ali manjše kruhke.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-3 items-start">
+                        <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">2</div>
+                        <div>
+                            <p class="font-semibold text-slate-100">Vzhajanje štručk</p>
+                            <p class="text-slate-400">Oblikovane štručke položi v posodo ali na pomokano površino, pokrij s folijo in pusti vzhajati 2–3 ure na sobni temperaturi, da lepo narastejo in se sprostijo.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-3 items-start">
+                        <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">3</div>
+                        <div>
+                            <p class="font-semibold text-slate-100">Peka na preostali toploti pica peči 🔥</p>
+                            <p class="text-slate-400">Ko zaključiš s peko pic, zmanjšaj plamen pica peči na minimum ali ga povsem ugasni (temperatura kamna naj pade na ~300–320 °C). Štručke nežno raztegni po dolžini in položi na kamen. Peci nekaj minut, da se lepo napihnejo in dobijo zlato-rumeno hrustljavo skorjo.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-3 items-start">
+                        <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">4</div>
+                        <div>
+                            <p class="font-semibold text-slate-100">Postrežba in polnjenje (Panuozzo)</p>
+                            <p class="text-slate-400">Pečene kruhke takoj po peki po dolžini prereži na pol. Napolni jih s svežo mocarelo, pršutom, rukolo, svežim paradižnikom ali oljčnim oljem ter po želji vrni v peč za 1 minutko, da se sir lepo rastopi.</p>
+                        </div>
+                    </div>
+                `;
+            }
         }
 
         function copyRecipe() {
             const numBalls = document.getElementById('numBalls').value;
             const ballWeight = document.getElementById('ballWeight').value;
             const hydration = document.getElementById('hydration').value;
+            const itemLabel = currentTab === 'breadrolls' ? 'kruhkov' : 'hlebčkov';
+            const yeastName = currentYeastType === 'dry' ? 'suhi' : 'sveži';
             
-            const poolishFlour = document.getElementById('poolishFlour').innerText;
-            const poolishWater = document.getElementById('poolishWater').innerText;
-            const poolishYeast = document.getElementById('poolishYeast').innerText;
-            const poolishSpoons = document.getElementById('poolishSpoons').innerText;
+            let recipeText = '';
 
-            const mainFlour = document.getElementById('mainFlour').innerText;
-            const mainWater = document.getElementById('mainWater').innerText;
-            const mainSalt = document.getElementById('mainSalt').innerText;
+            if (currentTab === 'poolish') {
+                const val1_1 = document.getElementById('val1_1').innerText;
+                const val1_2 = document.getElementById('val1_2').innerText;
+                const val1_3 = document.getElementById('val1_3').innerText;
+                const val1_3_hint = document.getElementById('val1_3_hint').innerText;
 
-            const recipeText = `🍕 RECEPT ZA PICA TESTO (POOLISH) 🍕
-Število kroglic: ${numBalls} x ${ballWeight}g | Hidracija: ${hydration}%
+                const val2_1 = document.getElementById('val2_1').innerText;
+                const val2_2 = document.getElementById('val2_2').innerText;
+                const val2_salt = document.getElementById('val2_salt').innerText;
+
+                recipeText = `🍕 RECEPT ZA PICA TESTO (POOLISH) 🍕
+Število ${itemLabel}: ${numBalls} x ${ballWeight}g | Hidracija: ${hydration}%
 
 1. POOLISH:
-• Moka: ${poolishFlour}
-• Voda: ${poolishWater}
-• Kvas (${currentYeastType === 'dry' ? 'suhi' : 'sveži'}): ${poolishYeast} ${poolishSpoons}
+• Moka: ${val1_1}
+• Voda: ${val1_2}
+• Kvas (${yeastName}): ${val1_3} ${val1_3_hint}
 Zmešaj vodo in kvas, dodaj moko, mešaj do gladke zmesi brez grudic. Posodo tesno pokrij!
-⏳ 1-2h na sobni temp (pokrito) + 16-24h v hladilniku (pokrito)
+⏳ 1–2h na sobni temp (pokrito) + 16–24h v hladilniku (pokrito)
 
 2. GLAVNO TESTO:
-• Preostala moka: ${mainFlour}
-• Preostala voda: ${mainWater}
-• Sol: ${mainSalt}
-Zamesi 8-10 min do gladkega, elastičnega testa (windowpane test).
-⏳ Odmor 1h pokrito, oblikuj kroglice, v pokrito posodo in v hladilnik za 24-48 ur!
-⏳ Pred peko pusti kroglice pokrite 2-3h na sobni temperaturi.`;
+• Preostala moka: ${val2_1}
+• Preostala voda: ${val2_2}
+• Sol: ${val2_salt}
+Zamesi 8–10 min do gladkega, elastičnega testa (windowpane test).
+⏳ Odmor 1h pokrito, oblikuj ${itemLabel}, v pokrito posodo in v hladilnik za 24–48 ur!
+⏳ Pred peko pusti ${itemLabel} pokrite 2–3h na sobni temperaturi.`;
+
+            } else if (currentTab === 'direct') {
+                const val2_1 = document.getElementById('val2_1').innerText;
+                const val2_2 = document.getElementById('val2_2').innerText;
+                const val2_yeast = document.getElementById('val2_yeast').innerText;
+                const val2_yeast_hint = document.getElementById('val2_yeast_hint').innerText;
+                const val2_salt = document.getElementById('val2_salt').innerText;
+
+                recipeText = `⚡ RECEPT ZA PICA TESTO (DIREKTNO TESTO) ⚡
+Število ${itemLabel}: ${numBalls} x ${ballWeight}g | Hidracija: ${hydration}%
+
+SESTAVINE:
+• Moka: ${val2_1}
+• Voda: ${val2_2}
+• Kvas (${yeastName}): ${val2_yeast} ${val2_yeast_hint}
+• Sol: ${val2_salt}
+
+⏳ Zamesi 10–12 min do gladkega in elastičnega testa.
+⏳ 1–2h vzhajanje v kosu pokrito na sobni temp.
+⏳ Oblikuj ${itemLabel} in pusti vzhajati:
+   - Hitro pečenje: 4–6h na sobni temp.
+   - Hladna fermentacija: 24h v hladilniku + 2–3h temperiranje pred peko.`;
+
+            } else if (currentTab === 'biga') {
+                const val1_1 = document.getElementById('val1_1').innerText;
+                const val1_2 = document.getElementById('val1_2').innerText;
+                const val1_3 = document.getElementById('val1_3').innerText;
+                const val1_3_hint = document.getElementById('val1_3_hint').innerText;
+
+                const val2_1 = document.getElementById('val2_1').innerText;
+                const val2_2 = document.getElementById('val2_2').innerText;
+                const val2_salt = document.getElementById('val2_salt').innerText;
+
+                recipeText = `🇮🇹 RECEPT ZA PICA TESTO (BIGA) 🇮🇹
+Število ${itemLabel}: ${numBalls} x ${ballWeight}g | Hidracija: ${hydration}%
+
+1. BIGA (Suho predtesto):
+• Moka v Bigi: ${val1_1}
+• Hladna voda: ${val1_2}
+• Kvas v Bigi (${yeastName}): ${val1_3} ${val1_3_hint}
+Na hitro zmešaj le do navlažitve moke (ostati mora groba in suha, ne gneti!).
+⏳ 16–18h pokrito pri ~18 °C.
+
+2. GLAVNO TESTO:
+• Preostala moka: ${val2_1}
+• Preostala voda: ${val2_2}
+• Sol: ${val2_salt}
+Nadrobi bigo, dodaj moko in vodo ter vgneti sol do prožnosti.
+⏳ Odmor 30–45 min, oblikuj ${itemLabel}, vzhajaj 2,5–3h na sobni temp pred peko.`;
+
+            } else if (currentTab === 'sourdough') {
+                const val1_1 = document.getElementById('val1_1').innerText;
+                const val1_2 = document.getElementById('val1_2').innerText;
+                const val1_3 = document.getElementById('val1_3').innerText;
+
+                const val2_1 = document.getElementById('val2_1').innerText;
+                const val2_2 = document.getElementById('val2_2').innerText;
+                const val2_salt = document.getElementById('val2_salt').innerText;
+
+                recipeText = `🌾 RECEPT ZA PICA TESTO (DROŽI) 🌾
+Število ${itemLabel}: ${numBalls} x ${ballWeight}g | Hidracija: ${hydration}%
+
+1. DROŽI (STARTER):
+• Matične droži: ${val1_1} (Moka: ${val1_2} | Voda: ${val1_3})
+
+2. ZAMES TESTA:
+• Dodana moka: ${val2_1}
+• Dodana voda: ${val2_2}
+• Sol: ${val2_salt}
+
+⏳ Autoliza moke in vode 45 min, vgneti aktivne droži ter sol.
+⏳ 3–4 serije nategovanja in prepogibanja (Stretch & Fold) na 30 min.
+⏳ Oblikuj ${itemLabel}, zapri v posodo in postavi v hladilnik za 24–36 ur.
+⏳ Pusti 2h na sobni temp pred peko.`;
+
+            } else if (currentTab === 'breadrolls') {
+                const val2_1 = document.getElementById('val2_1').innerText;
+                const val2_2 = document.getElementById('val2_2').innerText;
+                const val2_yeast = document.getElementById('val2_yeast').innerText;
+                const val2_yeast_hint = document.getElementById('val2_yeast_hint').innerText;
+                const val2_salt = document.getElementById('val2_salt').innerText;
+
+                recipeText = `🥖 RECEPT ZA PICA KRUHKE (PANUOZZO) 🥖
+Število ${itemLabel}: ${numBalls} x ${ballWeight}g | Hidracija: ${hydration}%
+
+SESTAVINE:
+• Moka: ${val2_1}
+• Voda: ${val2_2}
+• Kvas (${yeastName}): ${val2_yeast} ${val2_yeast_hint}
+• Sol: ${val2_salt}
+
+⏳ Zamesi testo in oblikuj podolgovate štručke ali kruhke.
+⏳ Vzhajanje 2–3h na sobni temp pokrito v posodi.
+⏳ Peka na preostali toploti pica peči pri ~300–320 °C do zlato-rumene barve.
+⏳ Prereži po dolžini, napolni z mocarelo, pršutom in rukolo!`;
+            }
 
             navigator.clipboard.writeText(recipeText).then(() => {
                 showToast();
