@@ -174,7 +174,7 @@
                                 <span class="text-slate-400">Kvas:</span>
                                 <div class="text-right">
                                     <span id="poolishYeast" class="font-bold text-amber-400">0.45 g</span>
-                                    <p id="poolishSpoons" class="text-[11px] text-slate-400">(~0.9 x 1ml ali ~9 x 0,1ml)</p>
+                                    <p id="poolishSpoons" class="text-[11px] text-slate-400">(~9,0 x 0,1ml žličke)</p>
                                 </div>
                             </li>
                         </ul>
@@ -221,7 +221,7 @@
                             <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">1</div>
                             <div>
                                 <p class="font-semibold text-slate-100">Priprava Poolisha</p>
-                                <p class="text-slate-400">Zmešaj vodo in kvas, dodaj moko ter premešaj. Pusti 1–2 uri na sobni temperaturi, nato pa postavi v hladilnik za 16–24 ur, da postane lepo zrel in penast.</p>
+                                <p class="text-slate-400">V posodo daj vodo sobne temperature in kvas ter dobro premešaj, da se kvas povsem raztopi. Dodaj moko in mešaj z žlico ali metlico, dokler zmes ni popolnoma gladka, brez grudic (konsistenca gostejše palačinčne zmesi). Posodo tesno pokrij s folijo ali pokrovom, da poolish na vrhu ne izsuši, in pusti 1–2 uri na sobni temperaturi. Nato pokrito posodo prestavi v hladilnik za 16–24 ur, da poolish lepo zraste, postane penast in poln mehurčkov.</p>
                             </div>
                         </div>
 
@@ -229,7 +229,7 @@
                             <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">2</div>
                             <div>
                                 <p class="font-semibold text-slate-100">Zames glavnega testa</p>
-                                <p class="text-slate-400">K zrelemu poolishu dodaj preostalo moko in večji del vode. Gneti, postopoma vmešaj sol in preostalo vodo, da dobiš gladko, elastično testo.</p>
+                                <p class="text-slate-400">K zrelemu poolishu (poln mehurčkov, rahlo kisel vonj je normalen) dodaj preostalo moko in večji del preostale vode. Gneti približno 8–10 minut, nato postopoma dodajaj sol in preostanek vode, dokler testo ni gladko in elastično ter se ne lepi na roke (t. i. windowpane test – košček testa se da razpotegniti v tanko, skoraj prosojno folijo, ne da bi se strgal).</p>
                             </div>
                         </div>
 
@@ -237,7 +237,7 @@
                             <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">3</div>
                             <div>
                                 <p class="font-semibold text-slate-100">Oblikovanje in hladna fermentacija</p>
-                                <p class="text-slate-400">Pusti testo počivati 1 uro na sobni temp., nato oblikuj <span id="stepBallsCount">6</span> kroglic po <span id="stepBallWeight">250g</span>. Zapri v posodo za vzhajanje in postavi v hladilnik za <span class="text-amber-400 font-semibold">24–48 ur</span>.</p>
+                                <p class="text-slate-400">Testo pokrito pusti počivati 1 uro na sobni temperaturi, nato ga razdeli in oblikuj v <span id="stepBallsCount">6</span> kroglic po <span id="stepBallWeight">250g</span>. Vsako kroglico daj v dovolj veliko posodo (testo se poveča za cca. 1,5×) in jo tesno pokrij s pokrovom ali folijo, da se ne posuši. Postavi v hladilnik za 24–48 ur.</p>
                             </div>
                         </div>
 
@@ -245,7 +245,7 @@
                             <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">4</div>
                             <div>
                                 <p class="font-semibold text-slate-100">Temperiranje pred peko</p>
-                                <p class="text-slate-400">Pred peko vzemi kroglice iz hladilnika in jih pusti 2–3 ure na sobni temperaturi, da se ogrejejo in lažje raztegnejo.</p>
+                                <p class="text-slate-400">Pred peko vzemi kroglice iz hladilnika, jih pokrite pusti 2–3 ure na sobni temperaturi, da se ogrejejo in lažje raztegnejo. Pekač oz. kamen za peko naj se medtem dobro segreje na najvišjo temperaturo pečice.</p>
                             </div>
                         </div>
                     </div>
@@ -338,13 +338,13 @@
             
             const poolishSpoonsEl = document.getElementById('poolishSpoons');
             if (currentYeastType === 'dry') {
-                const spoons1ml = (totalYeast / 0.5).toFixed(1);
-                const spoons01ml = Math.round(totalYeast / 0.05);
-                poolishSpoonsEl.innerText = `(~${spoons1ml} x 1ml ali ~${spoons01ml} x 0,1ml)`;
+                // gostota suhega kvasa ~0,5 g/ml → 0,1 ml žlička ≈ 0,05 g
+                const spoons01ml = (totalYeast / 0.05).toFixed(1);
+                poolishSpoonsEl.innerText = `(~${spoons01ml} x 0,1ml žličke)`;
             } else {
-                const mlFresh = (totalYeast / 0.9).toFixed(1);
-                const tspFresh = (totalYeast / 4).toFixed(1);
-                poolishSpoonsEl.innerText = `(~${mlFresh} ml ali ~${tspFresh} čajne žličke)`;
+                // sveži kvas ~3 g na čajno žličko (5ml, rahlo nadrobljen)
+                const tspFresh = (totalYeast / 3).toFixed(1);
+                poolishSpoonsEl.innerText = `(~${tspFresh} čajne žličke)`;
             }
             poolishSpoonsEl.classList.remove('hidden');
 
@@ -377,14 +377,16 @@
 • Moka: ${poolishFlour}
 • Voda: ${poolishWater}
 • Kvas (${currentYeastType === 'dry' ? 'suhi' : 'sveži'}): ${poolishYeast} ${poolishSpoons}
-⏳ 1-2h na sobni temp + 16-24h v hladilniku
+Zmešaj vodo in kvas, dodaj moko, mešaj do gladke zmesi brez grudic. Posodo tesno pokrij!
+⏳ 1-2h na sobni temp (pokrito) + 16-24h v hladilniku (pokrito)
 
 2. GLAVNO TESTO:
 • Preostala moka: ${mainFlour}
 • Preostala voda: ${mainWater}
 • Sol: ${mainSalt}
-⏳ Zamesi, odmor 1h, oblikuj kroglice ter jih postavi v hladilnik za 24-48 ur!
-⏳ Pred peko pusti kroglice 2-3h na sobni temperaturi.`;
+Zamesi 8-10 min do gladkega, elastičnega testa (windowpane test).
+⏳ Odmor 1h pokrito, oblikuj kroglice, v pokrito posodo in v hladilnik za 24-48 ur!
+⏳ Pred peko pusti kroglice pokrite 2-3h na sobni temperaturi.`;
 
             navigator.clipboard.writeText(recipeText).then(() => {
                 showToast();
