@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pica Master Kalkulator</title>
+    <title>Kalkulator testa za pico</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     
@@ -45,7 +45,7 @@
                 </div>
                 <div>
                     <h1 class="text-xl font-bold bg-gradient-to-r from-amber-200 via-amber-400 to-yellow-500 bg-clip-text text-transparent">
-                        Pica Master Kalkulator
+                        Kalkulator testa za pico
                     </h1>
                     <p class="text-xs text-slate-400">Recepture za testo in pica kruhke</p>
                 </div>
@@ -115,6 +115,7 @@
                                 <span id="hydrationValue" class="text-sm font-bold text-amber-400">65 %</span>
                             </div>
                             <input type="range" id="hydration" min="50" max="85" value="65" step="1" class="w-full accent-amber-500 bg-[#090d16] h-2 rounded-lg cursor-pointer">
+                            <p class="text-[10px] text-slate-500 mt-1.5 leading-relaxed">💡 Višja hidracija (nad 70 %) → bolj lepljivo testo, večje zračne mehurčke (alveolatura), hrustljavejši a mehkejši rob, težje ročno oblikovanje. Nižja hidracija (pod 60 %) → čvrstejše, lažje obvladljivo testo, a gostejša sredica.</p>
                         </div>
 
                         <!-- Poolish / Biga / Starter nastavitve -->
@@ -124,6 +125,7 @@
                                 <span id="poolishPctValue" class="text-sm font-bold text-yellow-400">30 %</span>
                             </div>
                             <input type="range" id="poolishPct" min="10" max="50" value="30" step="5" class="w-full accent-yellow-500 bg-[#090d16] h-2 rounded-lg cursor-pointer">
+                            <p class="text-[10px] text-slate-500 mt-1.5 leading-relaxed">💡 Večji delež moke v poolishu → izrazitejša kvašena aroma, hitrejša fermentacija glavnega testa, bolj raztegljivo testo. Manjši delež → blažji okus, testo je bolj podobno direktnemu.</p>
                         </div>
 
                         <div id="bigaParamGroup" class="hidden">
@@ -132,6 +134,7 @@
                                 <span id="bigaPctValue" class="text-sm font-bold text-yellow-400">60 %</span>
                             </div>
                             <input type="range" id="bigaPct" min="30" max="100" value="60" step="5" class="w-full accent-yellow-500 bg-[#090d16] h-2 rounded-lg cursor-pointer">
+                            <p class="text-[10px] text-slate-500 mt-1.5 leading-relaxed">💡 Večji delež moke v bigi → izrazitejša kvašena aroma in daljša obstojnost testa, a struktura je bolj krhka (manj raztegljiva). Manjši delež → mehkejše, bolj elastično testo z blažjim okusom.</p>
                         </div>
 
                         <div id="sourdoughParamGroup" class="hidden">
@@ -140,6 +143,7 @@
                                 <span id="sourdoughPctValue" class="text-sm font-bold text-emerald-400">20 %</span>
                             </div>
                             <input type="range" id="sourdoughPct" min="5" max="30" value="20" step="1" class="w-full accent-emerald-500 bg-[#090d16] h-2 rounded-lg cursor-pointer">
+                            <p class="text-[10px] text-slate-500 mt-1.5 leading-relaxed">💡 Večji delež starterja → hitrejša fermentacija in bolj izrazita kislost. Manjši delež → počasnejša, bolj nadzorovana fermentacija z blažjim, bolj uravnoteženim okusom (a potrebuje daljši čas vzhajanja).</p>
                         </div>
 
                         <!-- Sol -->
@@ -152,6 +156,7 @@
                                 <input type="number" id="saltPct" value="2.8" min="0" max="5" step="0.1" class="w-full bg-[#090d16] border border-slate-800 rounded-xl px-3 py-2 text-slate-100 font-semibold focus:outline-none focus:border-amber-500 transition">
                                 <span class="absolute right-3 top-2 text-xs text-slate-500">%</span>
                             </div>
+                            <p class="text-[10px] text-slate-500 mt-1.5 leading-relaxed">💡 Več soli → močnejši okus in tesnejša glutenska mreža (fermentacija je počasnejša, testo bolj čvrsto). Manj soli → hitrejša fermentacija, a manj arome in bolj mehko, hitreje razgrajeno testo.</p>
                         </div>
 
                         <!-- Kvas selection -->
@@ -171,6 +176,41 @@
                             <div class="relative">
                                 <input type="number" id="yeastPct" value="0.05" min="0.01" max="3" step="0.01" class="w-full bg-[#090d16] border border-slate-800 rounded-xl px-3 py-2 text-slate-100 font-semibold focus:outline-none focus:border-amber-500 transition">
                                 <span class="absolute right-3 top-2 text-xs text-slate-500">%</span>
+                            </div>
+                            <p class="text-[10px] text-slate-500 mt-1.5 leading-relaxed">💡 Več kvasa → hitrejša fermentacija in krajši čas vzhajanja, a manj razvit okus ter tveganje prekvašenosti. Manj kvasa → počasnejša, bolj nadzorovana fermentacija (dolgo hladno vzhajanje) s kompleksnejšim okusom.</p>
+                        </div>
+
+                        <!-- Dodatne sestavine (opcijsko) -->
+                        <div class="pt-3 border-t border-slate-800/60">
+                            <p class="text-xs font-semibold text-slate-300 mb-3 flex items-center gap-1.5">
+                                <i data-lucide="plus-circle" class="w-3.5 h-3.5 text-amber-400"></i>
+                                Dodatne sestavine <span class="text-[10px] font-normal text-slate-500">(neobvezno)</span>
+                            </p>
+
+                            <!-- Sladkor / Med -->
+                            <div class="mb-3">
+                                <label class="flex items-center gap-2 mb-1.5 cursor-pointer select-none">
+                                    <input type="checkbox" id="sugarEnabled" class="w-4 h-4 accent-amber-500 rounded bg-[#090d16] border-slate-700">
+                                    <span class="text-xs font-medium text-slate-300">Dodaj sladkor / med</span>
+                                </label>
+                                <div id="sugarInputGroup" class="hidden relative mb-1">
+                                    <input type="number" id="sugarPct" value="1.5" min="0" max="10" step="0.5" class="w-full bg-[#090d16] border border-slate-800 rounded-xl px-3 py-2 text-slate-100 font-semibold focus:outline-none focus:border-amber-500 transition">
+                                    <span class="absolute right-3 top-2 text-xs text-slate-500">%</span>
+                                </div>
+                                <p class="text-[10px] text-slate-500 leading-relaxed">💡 Sladkor/med (tipično 1–3 %) pospeši aktivnost kvasa (hitrejša fermentacija) in da lepšo zarumenitev skorje pri peki ter rahlo sladkast priokus. Več → hitrejše, temneje zapečeno testo; manj/brez → nevtralen okus, počasnejša fermentacija.</p>
+                            </div>
+
+                            <!-- Oljčno olje -->
+                            <div>
+                                <label class="flex items-center gap-2 mb-1.5 cursor-pointer select-none">
+                                    <input type="checkbox" id="oilEnabled" class="w-4 h-4 accent-amber-500 rounded bg-[#090d16] border-slate-700">
+                                    <span class="text-xs font-medium text-slate-300">Dodaj oljčno olje</span>
+                                </label>
+                                <div id="oilInputGroup" class="hidden relative mb-1">
+                                    <input type="number" id="oilPct" value="3" min="0" max="10" step="0.5" class="w-full bg-[#090d16] border border-slate-800 rounded-xl px-3 py-2 text-slate-100 font-semibold focus:outline-none focus:border-amber-500 transition">
+                                    <span class="absolute right-3 top-2 text-xs text-slate-500">%</span>
+                                </div>
+                                <p class="text-[10px] text-slate-500 leading-relaxed">💡 Olivno olje (tipično 2–5 %) naredi testo bolj mehko, elastično in podaljša svežino (počasneje se suši), a rob je manj hrustljav, bolj "chewy". Več olja → mehkejša, bolj aromatična skorja; manj/brez → bolj hrustljav, "airy" rob (klasična neapeljska pica).</p>
                             </div>
                         </div>
 
@@ -255,6 +295,14 @@
                                 <span id="card2LabelSalt" class="text-slate-400">Sol:</span>
                                 <span id="val2_salt" class="font-bold text-slate-100">25.2 g</span>
                             </li>
+                            <li id="card2RowSugar" class="hidden justify-between items-center border-b border-slate-800/80 pb-1.5">
+                                <span class="text-slate-400">Sladkor/med:</span>
+                                <span id="val2_sugar" class="font-bold text-slate-100">0 g</span>
+                            </li>
+                            <li id="card2RowOil" class="hidden justify-between items-center border-b border-slate-800/80 pb-1.5">
+                                <span class="text-slate-400">Oljčno olje:</span>
+                                <span id="val2_oil" class="font-bold text-slate-100">0 g</span>
+                            </li>
                         </ul>
                     </div>
 
@@ -325,7 +373,8 @@
         let currentYeastType = 'dry';
         let deferredPrompt;
 
-        const inputs = ['numBalls', 'ballWeight', 'hydration', 'saltPct', 'yeastPct', 'poolishPct', 'bigaPct', 'sourdoughPct'];
+        const inputs = ['numBalls', 'ballWeight', 'hydration', 'saltPct', 'yeastPct', 'poolishPct', 'bigaPct', 'sourdoughPct', 'sugarPct', 'oilPct'];
+        const checkboxInputs = ['sugarEnabled', 'oilEnabled'];
 
         function round5(num) {
             return Math.round(num / 5) * 5;
@@ -378,6 +427,10 @@
                 const el = document.getElementById(id);
                 if (el) params[id] = el.value;
             });
+            checkboxInputs.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) params[id] = el.checked;
+            });
             params['yeastType'] = currentYeastType;
             params['currentTab'] = currentTab;
             localStorage.setItem('pica_calc_params', JSON.stringify(params));
@@ -392,6 +445,11 @@
                     const el = document.getElementById(id);
                     if (el && params[id] !== undefined) el.value = params[id];
                 });
+                checkboxInputs.forEach(id => {
+                    const el = document.getElementById(id);
+                    if (el && params[id] !== undefined) el.checked = params[id];
+                });
+                updateAddonGroupsUI();
                 if (params.yeastType) {
                     currentYeastType = params.yeastType;
                     updateYeastButtonsUI();
@@ -405,11 +463,25 @@
             }
         }
 
+        function updateAddonGroupsUI() {
+            const sugarEnabled = document.getElementById('sugarEnabled').checked;
+            const oilEnabled = document.getElementById('oilEnabled').checked;
+            document.getElementById('sugarInputGroup').classList.toggle('hidden', !sugarEnabled);
+            document.getElementById('oilInputGroup').classList.toggle('hidden', !oilEnabled);
+        }
+
         inputs.forEach(id => {
             const el = document.getElementById(id);
             if(el) {
                 el.addEventListener('input', () => { calculate(); saveParamsToStorage(); });
                 el.addEventListener('change', () => { calculate(); saveParamsToStorage(); });
+            }
+        });
+
+        checkboxInputs.forEach(id => {
+            const el = document.getElementById(id);
+            if(el) {
+                el.addEventListener('change', () => { updateAddonGroupsUI(); calculate(); saveParamsToStorage(); });
             }
         });
 
@@ -475,17 +547,24 @@
             const hydration = parseFloat(document.getElementById('hydration').value) || 0;
             const saltPct = parseFloat(document.getElementById('saltPct').value) || 0;
             const yeastPct = parseFloat(document.getElementById('yeastPct').value) || 0;
+
+            const sugarEnabled = document.getElementById('sugarEnabled').checked;
+            const oilEnabled = document.getElementById('oilEnabled').checked;
+            const sugarPct = sugarEnabled ? (parseFloat(document.getElementById('sugarPct').value) || 0) : 0;
+            const oilPct = oilEnabled ? (parseFloat(document.getElementById('oilPct').value) || 0) : 0;
             
             document.getElementById('hydrationValue').innerText = `${hydration} %`;
 
             const totalWeight = numBalls * ballWeight;
-            const totalPct = 100 + hydration + saltPct + (currentTab !== 'sourdough' ? yeastPct : 0);
+            const totalPct = 100 + hydration + saltPct + (currentTab !== 'sourdough' ? yeastPct : 0) + sugarPct + oilPct;
 
             const rawTotalFlour = totalWeight / (totalPct / 100);
             const totalFlour = round5(rawTotalFlour);
             const totalWater = round5(totalFlour * (hydration / 100));
             const totalSalt = (totalFlour * (saltPct / 100)).toFixed(1);
             const totalYeast = (totalFlour * (yeastPct / 100));
+            const totalSugar = (totalFlour * (sugarPct / 100));
+            const totalOil = (totalFlour * (oilPct / 100));
 
             document.getElementById('totalWeightDisplay').innerHTML = `${Math.round(totalWeight)} <span class="text-base font-normal text-slate-400">g</span>`;
             document.getElementById('totalFlourDisplay').innerText = `${totalFlour}g`;
@@ -639,6 +718,21 @@
                 document.getElementById('val2_salt').innerText = `${totalSalt} g`;
 
                 renderInstructions('breadrolls', numBalls, ballWeight);
+            }
+
+            const sugarRow = document.getElementById('card2RowSugar');
+            const oilRow = document.getElementById('card2RowOil');
+            if (sugarEnabled && sugarPct > 0) {
+                sugarRow.style.display = 'flex';
+                document.getElementById('val2_sugar').innerText = `${totalSugar.toFixed(1)} g`;
+            } else {
+                sugarRow.style.display = 'none';
+            }
+            if (oilEnabled && oilPct > 0) {
+                oilRow.style.display = 'flex';
+                document.getElementById('val2_oil').innerText = `${totalOil.toFixed(1)} g`;
+            } else {
+                oilRow.style.display = 'none';
             }
 
             lucide.createIcons();
@@ -917,6 +1011,19 @@ SESTAVINE:
 • Sol: ${val2_salt}
 
 ⏳ Zamesi testo, oblikuj štručke in peci na toploti pica peči po peki pic!`;
+            }
+
+            const sugarEnabled = document.getElementById('sugarEnabled').checked;
+            const oilEnabled = document.getElementById('oilEnabled').checked;
+            let addonsText = '';
+            if (sugarEnabled) {
+                addonsText += `\n• Sladkor/med: ${document.getElementById('val2_sugar').innerText}`;
+            }
+            if (oilEnabled) {
+                addonsText += `\n• Oljčno olje: ${document.getElementById('val2_oil').innerText}`;
+            }
+            if (addonsText) {
+                recipeText += `\n\nDODATNE SESTAVINE:${addonsText}`;
             }
 
             navigator.clipboard.writeText(recipeText).then(() => {
