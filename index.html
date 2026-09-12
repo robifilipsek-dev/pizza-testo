@@ -381,13 +381,10 @@
         }
 
         function getYeastSpoonsText(yeastGrams, yeastType) {
-            if (yeastType === 'dry') {
-                const spoons = (yeastGrams / 0.05).toFixed(1).replace('.', ',');
-                return `(~${spoons} x 0,1ml žličke)`;
-            } else {
-                const tsp = (yeastGrams / 3).toFixed(1).replace('.', ',');
-                return `(~${tsp} čajne žličke)`;
-            }
+            // Ista 0,1ml merska žlička za oba tipa kvasa (sveži kvas je gostejši, zato je na žličko več grama).
+            const gramsPerSpoon = (yeastType === 'dry') ? 0.05 : 0.1;
+            const spoons = Math.round(yeastGrams / gramsPerSpoon);
+            return `(~${spoons} x 0,1ml žličke)`;
         }
 
         lucide.createIcons();
@@ -518,6 +515,9 @@
         function setYeastType(type) {
             currentYeastType = type;
             updateYeastButtonsUI();
+            // Ob vsakem ročnem preklopu tipa kvasa privzeto nastavi optimalen odstotek za ta tip.
+            const yeastPctInput = document.getElementById('yeastPct');
+            yeastPctInput.value = (type === 'dry') ? 0.05 : 0.15;
             calculate();
             saveParamsToStorage();
         }
@@ -525,18 +525,15 @@
         function updateYeastButtonsUI() {
             const btnDry = document.getElementById('btnDryYeast');
             const btnFresh = document.getElementById('btnFreshYeast');
-            const yeastPctInput = document.getElementById('yeastPct');
             const yeastHint = document.getElementById('yeastHint');
 
             if (currentYeastType === 'dry') {
                 btnDry.className = "py-1.5 text-xs font-semibold rounded-lg bg-amber-500 text-slate-950 transition shadow";
                 btnFresh.className = "py-1.5 text-xs font-semibold rounded-lg text-slate-400 hover:text-slate-200 transition";
-                if(!localStorage.getItem('pica_calc_params')) yeastPctInput.value = 0.05;
                 yeastHint.innerText = 'suhi: 0,05–0,1 %';
             } else {
                 btnFresh.className = "py-1.5 text-xs font-semibold rounded-lg bg-amber-500 text-slate-950 transition shadow";
                 btnDry.className = "py-1.5 text-xs font-semibold rounded-lg text-slate-400 hover:text-slate-200 transition";
-                if(!localStorage.getItem('pica_calc_params')) yeastPctInput.value = 0.15;
                 yeastHint.innerText = 'sveži: 0,15–0,3 %';
             }
         }
