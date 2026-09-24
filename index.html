@@ -76,6 +76,9 @@
             <button onclick="switchTab('breadrolls')" id="tab-breadrolls" class="tab-btn px-3.5 py-1.5 rounded-xl border border-transparent text-xs font-semibold whitespace-nowrap flex items-center gap-1.5 text-slate-400 hover:text-slate-200 transition">
                 <span>🥖</span> Kruhki iz peči
             </button>
+            <button onclick="switchTab('focaccia')" id="tab-focaccia" class="tab-btn px-3.5 py-1.5 rounded-xl border border-transparent text-xs font-semibold whitespace-nowrap flex items-center gap-1.5 text-slate-400 hover:text-slate-200 transition">
+                <span>🌿</span> Fokača
+            </button>
         </div>
     </header>
 
@@ -506,6 +509,9 @@
             if (currentTab === 'breadrolls') {
                 document.getElementById('labelNumItems').innerText = 'Število kruhkov';
                 document.getElementById('labelItemWeight').innerText = 'Teža kruhka';
+            } else if (currentTab === 'focaccia') {
+                document.getElementById('labelNumItems').innerText = 'Število pekačev';
+                document.getElementById('labelItemWeight').innerText = 'Teža testa/pekač';
             } else {
                 document.getElementById('labelNumItems').innerText = 'Število hlebčkov';
                 document.getElementById('labelItemWeight').innerText = 'Teža hlebčka';
@@ -715,6 +721,25 @@
                 document.getElementById('val2_salt').innerText = `${totalSalt} g`;
 
                 renderInstructions('breadrolls', numBalls, ballWeight);
+
+            } else if (currentTab === 'focaccia') {
+                cardPre.style.display = 'none';
+
+                card2Title.innerHTML = `<i data-lucide="droplet" class="w-4 h-4"></i> TESTO ZA FOKAČO`;
+                document.getElementById('card2Label1').innerText = 'Moka:';
+                document.getElementById('val2_1').innerText = `${totalFlour} g`;
+                document.getElementById('card2Label2').innerText = 'Voda:';
+                document.getElementById('val2_2').innerText = `${totalWater} g`;
+                
+                card2RowYeast.style.display = 'flex';
+                document.getElementById('card2LabelYeast').innerText = 'Kvas:';
+                document.getElementById('val2_yeast').innerText = `${totalYeast < 10 ? totalYeast.toFixed(2) : Math.round(totalYeast)} g`;
+                document.getElementById('val2_yeast_hint').innerText = getYeastSpoonsText(totalYeast, currentYeastType);
+
+                document.getElementById('card2LabelSalt').innerText = 'Sol:';
+                document.getElementById('val2_salt').innerText = `${totalSalt} g`;
+
+                renderInstructions('focaccia', numBalls, ballWeight);
             }
 
             const sugarRow = document.getElementById('card2RowSugar');
@@ -886,6 +911,44 @@
                         </div>
                     </div>
                 `;
+            } else if (type === 'focaccia') {
+                container.innerHTML = `
+                    <div class="flex gap-3 items-start">
+                        <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">1</div>
+                        <div>
+                            <p class="font-semibold text-slate-100">Zames testa</p>
+                            <p class="text-slate-400">Kvas raztopi v vodi. Dodaj moko in gneti (ali mešaj z leseno žlico, ker je testo pri visoki hidraciji zelo lepljivo), dokler se ne poveže. Vgneti sol.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-3 items-start">
+                        <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">2</div>
+                        <div>
+                            <p class="font-semibold text-slate-100">Prepogibanje testa (Stretch & Fold)</p>
+                            <p class="text-slate-400">Testo pusti počivati 15 minut, nato z mokrimi rokami opravi 3–4 serije nategovanja in prepogibanja na vsakih 30 minut, da zgradiš glutensko mrežo kljub visoki hidraciji.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-3 items-start">
+                        <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">3</div>
+                        <div>
+                            <p class="font-semibold text-slate-100">Prvo vzhajanje</p>
+                            <p class="text-slate-400">Pokrito testo vzhajaj 2–3 ure na sobni temperaturi ali 24 ur v hladilniku (pred nadaljevanjem ga temperiraj 1–2 uri).</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-3 items-start">
+                        <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">4</div>
+                        <div>
+                            <p class="font-semibold text-slate-100">V pekač</p>
+                            <p class="text-slate-400">Obilno naolji <span class="font-semibold text-slate-200">${numBalls}</span> pekač(-e) (za testo skupaj <span class="font-semibold text-slate-200">${ballWeight} g</span>/pekač). Testo previdno razporedi po pekaču, ne da bi ga stisnil, pokrij in pusti vzhajati še 45–60 minut.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-3 items-start">
+                        <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">5</div>
+                        <div>
+                            <p class="font-semibold text-slate-100">Jamice, olje in peka</p>
+                            <p class="text-slate-400">Z naoljenimi prsti naredi po testu jamice. Polij z oljčnim oljem, posuj z grobo soljo (in po želji rožmarinom). Peci na 220–230 °C (staticni pečici, spodaj+zgoraj) 20–25 minut do zlato rjave barve.</p>
+                        </div>
+                    </div>
+                `;
             }
         }
 
@@ -1008,6 +1071,25 @@ SESTAVINE:
 • Sol: ${val2_salt}
 
 ⏳ Zamesi testo, oblikuj štručke in peci na toploti pica peči po peki pic!`;
+
+            } else if (currentTab === 'focaccia') {
+                const val2_1 = document.getElementById('val2_1').innerText;
+                const val2_2 = document.getElementById('val2_2').innerText;
+                const val2_yeast = document.getElementById('val2_yeast').innerText;
+                const val2_yeast_hint = document.getElementById('val2_yeast_hint').innerText;
+                const val2_salt = document.getElementById('val2_salt').innerText;
+
+                recipeText = `🌿 RECEPT ZA FOKAČO 🌿
+Število pekačev: ${numBalls} x ${ballWeight} g testa | Hidracija: ${hydration}%
+
+SESTAVINE:
+• Moka: ${val2_1}
+• Voda: ${val2_2}
+• Kvas (${yeastName}): ${val2_yeast} ${val2_yeast_hint}
+• Sol: ${val2_salt}
+
+⏳ Zamesi, opravi Stretch & Fold serije, vzhajaj, razporedi v naoljen pekač.
+⏳ Naredi jamice, polij z oljčnim oljem in soljo, peci 220–230 °C 20–25 min.`;
             }
 
             const sugarEnabled = document.getElementById('sugarEnabled').checked;
